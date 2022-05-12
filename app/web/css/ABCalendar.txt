@@ -1,0 +1,474 @@
+@CHARSET "UTF-8";
+[calendarContainer] {
+	float: none;
+}
+[calendarContainer] .abClear {
+	clear: both;
+}
+[calendarContainer] .abForm{
+	font-family: [font_family];
+	font-size: [font_size_available]px;
+	margin: 10px 0px 10px 0;
+}
+[calendarContainer] .abLayout{
+	width: 100%;
+	margin: 10px 10px 10px 0;
+}
+[calendarNav] {
+	float: left;
+	clear: both;
+}
+[calendarNav] .abCalendarLinkMonthPrev {
+	float: left;
+}
+[calendarNav] .abCalendarLinkMonthNext {
+	float: right;
+}
+[calendarContainer] table.abCalendarTable, 
+[calendarContainer] table.abCalendarTablePrice{
+	background-color: #EFEFEF;
+	border: [border_outer_size]px solid [border_outer];
+	border-collapse: collapse;
+	table-layout: fixed;
+	float: left;
+	font-family: [font_family];
+	height: 100%;
+	margin: 1px 10px 10px 0;
+	width: 100%;
+}
+[calendarContainer] a{
+	outline: none;
+}
+[calendarContainer] td.abCalendarMonth{
+	background-color: [background_month];
+	border-right: solid 1px [background_month];
+	border-bottom: solid 1px [background_month];
+	color: [color_month];
+	/*height: [cell_height]%;*/
+	white-space: nowrap;
+}
+[calendarContainer] .abCalendarMonthInner{
+	overflow: hidden;
+	position: relative; 
+	width: 100%; 
+	/*height: 100%;*/
+	padding: 32% 0; 
+}
+[calendarContainer] td.abCalendarMonth,
+[calendarContainer] td.abCalendarMonth a:link,
+[calendarContainer] td.abCalendarMonth a:visited,
+[calendarContainer] td.abCalendarMonth a:hover{
+	text-align: center;
+	vertical-align: middle;
+	font-size: [font_size_month]px;
+	[font_style_month];
+}
+[calendarContainer] td.abCalendarMonth a:link,
+[calendarContainer] td.abCalendarMonth a:visited{
+	text-decoration: none;
+}
+[calendarContainer] td.abCalendarMonthPrev,
+[calendarContainer] td.abCalendarMonthNext{
+	background-color: [background_nav];
+	width: [cell_width]%;
+}
+[calendarContainer] td.abCalendarMonthPrev a:link,
+[calendarContainer] td.abCalendarMonthPrev a:visited,
+[calendarContainer] td.abCalendarMonthPrev a:active,
+[calendarContainer] td.abCalendarMonthNext a{
+	display: inline-block;
+	width: 100%;
+	/*height: 100%;*/
+}
+[calendarContainer] td.abCalendarMonthPrev:hover,
+[calendarContainer] td.abCalendarMonthNext:hover{
+	background-color: [background_nav_hover];
+}
+[calendarContainer] a.abCalendarLinkMonth:link,
+[calendarContainer] a.abCalendarLinkMonth:visited,
+[calendarContainer] a.abCalendarLinkMonth:active,
+[calendarContainer] a.abCalendarLinkMonth:hover,
+[calendarContainer] a.abCalendarLinkMonth:focus{
+	display: inline-block;
+	width: 100%;
+	/*height: 100%;*/
+	/*position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;*/
+}
+[calendarContainer] td.abCalendarMonthPrev a{
+	background: transparent url([URL]app/web/img/cal_prev.png) center center no-repeat;
+	display: block;
+	width: 10px;
+	height: 17px;
+}
+[calendarContainer] td.abCalendarMonthNext a{
+	background: transparent url([URL]app/web/img/cal_next.png) center center no-repeat;
+	display: block;
+	width: 10px;
+	height: 17px;
+}
+[calendarContainer] td.abCalendarMonth a:hover{
+	text-decoration: none;
+}
+[calendarContainer] td.abCalendarWeekDay{
+	background-color: [background_weekday];
+	color: [color_weekday];
+	font-size: [font_size_weekday]px;
+	/*padding: 2px 0;
+	text-align: center;
+	vertical-align: middle;*/
+	[font_style_weekday];
+}
+[calendarContainer] td.abCalendarWeekDay span.abCalendarWeekDayInner{
+	padding: 32% 0;
+	display: block;
+}
+[calendarContainer] td.abCalendarHeader{ 
+	font-weight: bold; 
+	color: #000; 
+}
+[calendarContainer] td.abCalendarWeekDay,
+[calendarContainer] td.abCalendarWeekNum,
+[calendarContainer] td.abCalendarToday, 
+[calendarContainer] td.abCalendarReserved, 
+[calendarContainer] td.abCalendarPending, 
+[calendarContainer] td.abCalendarPast, 
+[calendarContainer] td.abCalendarEmpty, 
+[calendarContainer] td.abCalendarDate,
+[calendarContainer] td.abCalendarPendingNightsStart,
+[calendarContainer] td.abCalendarPendingNightsEnd,
+[calendarContainer] td.abCalendarReservedNightsStart,
+[calendarContainer] td.abCalendarReservedNightsEnd,
+[calendarContainer] td.abCalendarNightsReservedReserved,
+[calendarContainer] td.abCalendarNightsReservedPending,
+[calendarContainer] td.abCalendarNightsPendingReserved,
+[calendarContainer] td.abCalendarNightsPendingPending{
+	border: [border_inner_size]px solid [border_inner];
+	/*height: [cell_height]%;*/
+	/*position: relative;*/
+	text-align: center;
+	vertical-align: middle;
+	width: [cell_width]%;
+}
+[calendarContainer] .abCalendarCellInner{
+	height: 100%;
+	/*overflow: hidden;*/
+	position: relative; 
+	width: 100%;
+}
+[calendarContainer] td.abCalendarReserved{
+	background-color: [background_booked];
+	color: [color_booked];
+	font-size: [font_size_booked]px;
+	[font_style_booked];
+}
+[calendarContainer] td.abCalendarReservedNightsStart, 
+[calendarContainer] td.abCalendarReservedNightsEnd {
+	color: [color_available];
+	font-size: [font_size_booked]px;
+	[font_style_booked];
+}
+[calendarContainer] td.abCalendarReservedNightsStart {
+	background-image: none;
+}
+[calendarContainer] td.abCalendarReservedNightsEnd {
+	background-image: none;
+}
+[calendarContainer] td.abCalendarNightsPendingPending {
+	background-image: none;
+}
+[calendarContainer] td.abCalendarNightsReservedPending {
+	background-image: none;
+}
+[calendarContainer] td.abCalendarNightsPendingReserved {
+	background-image: none;
+}
+[calendarContainer] td.abCalendarNightsReservedReserved {
+	background-image: none;
+	color: [color_booked];
+}
+[calendarContainer] td.abCalendarPending{
+	background-color: [background_pending];
+	color: [color_pending];
+	font-size: [font_size_pending]px;
+	[font_style_pending];
+}
+[calendarContainer] td.abCalendarPendingNightsStart, 
+[calendarContainer] td.abCalendarPendingNightsEnd {
+	color: [color_available];
+	font-size: [font_size_pending]px;
+	[font_style_pending];
+}
+[calendarContainer] td.abCalendarPendingNightsStart {
+	background-image: none;
+}
+[calendarContainer] td.abCalendarPendingNightsEnd {
+	background-image: none;
+}
+[calendarContainer] td.abCalendarPast{
+	background-color: [background_past];
+	color: [color_past];
+	font-size: [font_size_past]px;
+	[font_style_past];
+}
+[calendarContainer] td.abCalendarEmpty{
+	background-color: [background_empty];
+	font-size: [font_size_available]px;
+}
+[calendarContainer] td.abCalendarWeekNum{
+	background-color: [background_weekday];
+	color: [color_weekday];
+	font-size: [font_size_weekday]px;
+}
+[calendarContainer] td.abCalendarDate, 
+[calendarContainer] td.abCalendarToday,
+[calendarContainer] td.abCalendarPendingNightsStart,
+[calendarContainer] td.abCalendarPendingNightsEnd,
+[calendarContainer] td.abCalendarReservedNightsStart,
+[calendarContainer] td.abCalendarReservedNightsEnd { 
+	cursor: pointer;
+	background-color: [background_available];
+	color: [color_available];
+	font-size: [font_size_available]px;
+	[font_style_available];
+}
+[calendarContainer] td.abCalendarPartial{ 
+	cursor: pointer !important;
+}
+[calendarContainer] td.abCalendarSelect{
+	background-image: none;
+	background-color: [background_select];
+}
+[calendarContainer] td.abCalendarFirstSelect{
+	background-image: none;
+	background-color: [background_select];
+}
+[calendarContainer] table.abCalendarLegend{
+	clear: left; 
+	border: none;
+	width: 100%;
+}
+[calendarContainer] td.abCalendarLabel{
+	padding: 0 5px;
+}
+[calendarContainer] td.abCalendarColor{
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	width: 20px;
+}
+[calendarContainer] td.abCalendarColorAvailable{
+	background-color: [background_available];
+}
+[calendarContainer] td.abCalendarColorReserved{
+	background-color: [background_booked];
+}
+[calendarContainer] td.abCalendarColorPending{
+	background-color: [background_pending];
+}
+[calendarContainer] td.abCalendarColorPast{
+	background-color: [background_past];
+}
+
+[calendarContainer] .abCalendarPrice{
+	background-color: #ccc;
+	border: solid 1px #000;
+	color: #000;
+	display: none;
+	font-weight: normal;
+	padding: 5px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 100;
+	white-space: nowrap;
+}
+[calendarContainer] .abCalendarPriceStatic{
+	color: #000;
+	white-space: nowrap;
+	margin: 5px 0 0;
+}
+[calendarContainer] table.abCalendarTablePrice tbody td{
+	cursor: default !important;
+}
+[calendarContainer] table.abCalendarTablePrice td.abCalendarMonth .abCalendarLinkMonth {
+	cursor: pointer;
+}
+[calendarContainer] .abCalendarLegend {
+	font-family: [font_family_legend];
+	color: [color_legend];	
+	font-size: [font_size_legend]px; 
+	[font_style_legend];
+}
+
+[calendarContainer] .abImageWrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+[calendarContainer] .abImage{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+[calendarContainer].abWrapper13 table.abCalendarTable{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	float: none;
+}
+[calendarContainer].abWrapper13 .abBox13{
+	width: 33%;
+	float: left;
+	margin: 1px 0.5% 0.5% 0;
+	padding: 0;
+}
+[calendarContainer].abWrapper13 .abBox13:nth-child(3n+2){
+	margin-right: 0 !important;	
+}
+[calendarContainer] .abMenu{
+	background-color: [background_nav];
+}
+.abCalendarMessage,
+.abCalendarTooltip{
+	font-family: [font_family];
+	font-size: [font_size_available]px;
+	font-weight: normal;
+}
+
+[calendarContainer] .abCalendarLinkDate{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+[calendarContainer] .abCalendarLinkDateInner{
+	width: 100%;
+	padding: 42% 0;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+}
+[calendarContainer].abWrapper13 .abBox13 .abCalendarLinkDateInner{
+	padding: 30% 0;
+}
+[calendarContainer] .abCalendarLinkDate .abLeft,
+[calendarContainer] .abCalendarLinkDate .abRight{
+	background-color: [background_available];
+}
+[calendarContainer] .abCalendarPast .abCalendarLinkDate .abLeft,
+[calendarContainer] .abCalendarPast .abCalendarLinkDate .abRight{
+	background-color: transparent;
+}
+[calendarContainer] .abCalendarLinkDate .abLeft{
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+[calendarContainer] .abCalendarLinkDate .abRight{
+	width: 50%;
+	height: 100%;
+	float: right;
+}
+[calendarContainer] .abCalendarLinkDate .abLeftPending,
+[calendarContainer] .abCalendarLinkDate .abRightPending{
+	background-color: [background_pending];
+}
+[calendarContainer] .abCalendarLinkDate .abLeftConfirmed,
+[calendarContainer] .abCalendarLinkDate .abRightConfirmed{
+	background-color: [background_booked];
+}
+.abBackendView .abCalendarLinkDateInner{
+	padding: 20% 0 !important;
+}
+@media screen and (max-width: 320px) {
+	[calendarContainer] td.abCalendarMonth{
+		font-weight: normal;
+	}
+	[calendarContainer] td.abCalendarWeekDay,
+	[calendarContainer] td.abCalendarWeekNum,
+	[calendarContainer] td.abCalendarDate,
+	[calendarContainer] td.abCalendarPast,  
+	[calendarContainer] td.abCalendarToday, 
+	[calendarContainer] td.abCalendarPending, 
+	[calendarContainer] td.abCalendarPendingNightsStart, 
+	[calendarContainer] td.abCalendarPendingNightsEnd,
+	[calendarContainer] td.abCalendarReserved,
+	[calendarContainer] td.abCalendarReservedNightsStart, 
+	[calendarContainer] td.abCalendarReservedNightsEnd{
+		font-weight: normal;
+		overflow: hidden;
+	}
+}
+@media screen and (max-width: 480px) {
+	[calendarContainer] td.abCalendarMonth{
+		font-weight: normal;
+	}
+	[calendarContainer] td.abCalendarWeekDay,
+	[calendarContainer] td.abCalendarWeekNum,
+	[calendarContainer] td.abCalendarDate,
+	[calendarContainer] td.abCalendarPast, 
+	[calendarContainer] td.abCalendarToday,
+	[calendarContainer] td.abCalendarPending, 
+	[calendarContainer] td.abCalendarPendingNightsStart, 
+	[calendarContainer] td.abCalendarPendingNightsEnd,
+	[calendarContainer] td.abCalendarReserved, 
+	[calendarContainer] td.abCalendarReservedNightsStart, 
+	[calendarContainer] td.abCalendarReservedNightsEnd{
+		font-weight: normal;
+		overflow: hidden;
+	}
+	[calendarContainer].abWrapper13 .abBox13{
+		width: 100%;
+		height: 60%;
+		float: left;
+		margin: 1px 0px 5px 0px !important;
+	}
+}
+
+@media screen and (max-width: 680px) {
+	[calendarContainer].abWrapper13 .abBox13{
+		width: 49.5%;
+		height: 40%;
+		float: left;
+		margin: 1px 1% 1% 0;
+		padding: 0;
+	}
+	[calendarContainer].abWrapper13 .abBox13:nth-child(3n+2){
+		margin: 1px 1% 1% 0 !important;
+	}
+	[calendarContainer].abWrapper13 .abBox13:nth-child(2n){
+		margin-right: 0 !important;
+		float: right;	
+	}
+}
+@media screen and (max-width: 480px) {
+	[calendarContainer].abWrapper13 .abBox13{
+		width: 100%;
+		height: 60%;
+		float: none !important;
+		margin: 1px 0px 6px 0px !important;
+	}
+	[calendarContainer].abWrapper13 .abBox13:nth-child(3n+2){
+		margin: 1px 0px 6px 0px !important;
+	}
+	[calendarContainer].abWrapper13 .abBox13:nth-child(2n){
+		margin: 1px 0px 6px 0px !important;
+		float: none !important;
+	}
+}
+@media screen and (max-width: 400px) {
+	[calendarContainer].abWrapper13 .abBox13{
+		height: 48%;
+	}
+}

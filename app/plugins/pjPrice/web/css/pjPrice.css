@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+input.pj-form-field.error{
+	border-color: #B20000;
+}
+.pjPrice_duplicate{
+	background-color: #FFB4B4;
+}

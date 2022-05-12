@@ -1,0 +1,84 @@
+[calendarContainer] a:link, 
+[calendarContainer] a:visited, 
+[calendarContainer] a:active, 
+[calendarContainer] span {
+	cursor: pointer;
+	background-color: [background_available];
+	color: [color_available];
+	font-size: [font_size_available]px;
+	[font_style_available];
+}
+[calendarContainer] span {
+	cursor: default !important;
+}
+[calendarContainer] a.abCalendarReserved,
+[calendarContainer] span.abCalendarReserved{
+	background-color: [background_booked];
+	color: [color_booked];
+	font-size: [font_size_booked]px;
+	[font_style_booked];
+}
+[calendarContainer] a.abCalendarReservedNightsStart, 
+[calendarContainer] a.abCalendarReservedNightsEnd,
+[calendarContainer] span.abCalendarReservedNightsStart, 
+[calendarContainer] span.abCalendarReservedNightsEnd {
+	color: [color_available];
+	font-size: [font_size_booked]px;
+	[font_style_booked];
+}
+[calendarContainer] a.abCalendarReservedNightsStart,
+[calendarContainer] span.abCalendarReservedNightsStart {
+	background-image: url("[URL]index.php?controller=pjFront&action=pjActionImage&color1=[c_background_available]&color2=[c_background_booked]&width=[cell_width]&height=[cell_height]");
+	background-position: center center;
+}
+[calendarContainer] a.abCalendarReservedNightsEnd,
+[calendarContainer] span.abCalendarReservedNightsEnd {
+	background-image: url("[URL]index.php?controller=pjFront&action=pjActionImage&color1=[c_background_booked]&color2=[c_background_available]&width=[cell_width]&height=[cell_height]");
+	background-position: center center;
+}
+[calendarContainer] a.abCalendarNightsPendingPending,
+[calendarContainer] span.abCalendarNightsPendingPending {
+	background-image: url("[URL]index.php?controller=pjFront&action=pjActionImage&color1=[c_background_pending]&color2=[c_background_pending]&width=[cell_width]&height=[cell_height]");
+	background-position: center center;
+}
+[calendarContainer] a.abCalendarNightsReservedPending,
+[calendarContainer] span.abCalendarNightsReservedPending {
+	background-image: url("[URL]index.php?controller=pjFront&action=pjActionImage&color1=[c_background_booked]&color2=[c_background_pending]&width=[cell_width]&height=[cell_height]");
+	background-position: center center;
+}
+[calendarContainer] a.abCalendarNightsPendingReserved,
+[calendarContainer] span.abCalendarNightsPendingReserved {
+	background-image: url("[URL]index.php?controller=pjFront&action=pjActionImage&color1=[c_background_pending]&color2=[c_background_booked]&width=[cell_width]&height=[cell_height]");
+	background-position: center center;
+}
+[calendarContainer] a.abCalendarNightsReservedReserved,
+[calendarContainer] span.abCalendarNightsReservedReserved {
+	background-image: url("[URL]index.php?controller=pjFront&action=pjActionImage&color1=[c_background_booked]&color2=[c_background_booked]&width=[cell_width]&height=[cell_height]");
+	background-position: center center;
+	color: [color_booked];
+}
+[calendarContainer] a.abCalendarPending,
+[calendarContainer] span.abCalendarPending {
+	background-color: [background_pending];
+	color: [color_pending];
+	font-size: [font_size_pending]px;
+	[font_style_pending];
+}
+[calendarContainer] a.abCalendarPendingNightsStart, 
+[calendarContainer] a.abCalendarPendingNightsEnd,
+[calendarContainer] span.abCalendarPendingNightsStart, 
+[calendarContainer] span.abCalendarPendingNightsEnd {
+	color: [color_available];
+	font-size: [font_size_pending]px;
+	[font_style_pending];
+}
+[calendarContainer] a.abCalendarPendingNightsStart,
+[calendarContainer] span.abCalendarPendingNightsStart {
+	background-image: url("[URL]index.php?controller=pjFront&action=pjActionImage&color1=[c_background_available]&color2=[c_background_pending]&width=[cell_width]&height=[cell_height]");
+	background-position: center center;
+}
+[calendarContainer] a.abCalendarPendingNightsEnd,
+[calendarContainer] span.abCalendarPendingNightsEnd {
+	background-image: url("[URL]index.php?controller=pjFront&action=pjActionImage&color1=[c_background_pending]&color2=[c_background_available]&width=[cell_width]&height=[cell_height]");
+	background-position: center center;
+}

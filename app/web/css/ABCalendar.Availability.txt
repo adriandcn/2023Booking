@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+.abAvailability .abMenu{
+	background-color: [background_nav];
+	margin: 0 0 1px;
+}
+.abAvailability .abCal-head-row span{
+	background-color: [background_nav];
+	color: #fff;
+}

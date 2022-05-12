@@ -1,0 +1,77 @@
+				cupon = pjQ.$("#cupon").val();
+				pasajeros = pjQ.$('select[name="c_adults"]').val();
+
+				if(cupon === '' || cupon === null || cupon === undefined){
+					console.log('No viene el valor del cupon');	
+					pjQ.$.get([this.opts.folder, "index.php?controller=pjFront&action=pjActionGetBookingForm"].join(""), {
+						"cid": self.opts.cid,
+						"view": self.opts.view,
+						"month": self.month,
+						"year": self.year,
+						"start_dt": self.start_dt,
+						"end_dt": self.end_dt,
+						"locale": self.opts.locale,
+						"index": self.opts.index,
+						"session_id": self.opts.session_id
+					}).done(function (data) {
+						self.$abCalendar.html(data);
+						self.$abLoader.hide();
+						self.errorHandler.call(self, 'hide');
+						self.$abWrapper.parent().css("height", "auto")
+						var opts = {
+							errorClass: "abError",
+							validClass: "abValid",
+							//debug: true,
+							errorPlacement: function (error, element) {
+								error.insertAfter(element.parent());
+							},
+							rules: {},
+							messages: {},
+							submitHandler: function (form) {
+								pjQ.$(form).find(":button, :submit").attr("disabled", "disabled");
+								pjQ.$(form).find(":submit").prepend('<i class="fa fa-repeat fa-spin"></i>&nbsp;');																									
+								self.getSummaryForm.call(self, form);
+								return false;	
+							}
+						};
+						if (self.$abCalendar.find("input[name='captcha']").length > 0) {
+							opts.rules.captcha = {
+								required: true,
+								maxlength: 6,
+								//remote: [self.opts.folder, "index.php?controller=pjFront&action=pjActionCheckCaptcha&cid=", self.opts.cid].join("")
+								remote: [self.opts.folder, "index.php?controller=pjFront&action=pjActionCheckCaptcha&cid=", self.opts.cid, "&session_id=", self.opts.session_id].join("")
+							};
+							opts.messages.captcha = {
+								remote: self.opts.error_msg.captcha
+							};
+							opts.onkeyup = false;
+						}
+						self.$abCalendar.find(".abSelectorBookingForm").validate(opts);
+					}).fail(function () {
+						log("Deferred is rejected");
+					});							
+				}else{
+					console.log('Si viene el valor del cupon, validar el cupon');
+	
+					var sendData = 'code='+cupon+'&c_adults='+pasajeros;                            
+					pjQ.$.post([this.opts.folder, "index.php?controller=pjFront&action=verifyCouponBookingLight"].join(""), sendData).done(function (data) {
+						console.log('data:', data);
+					}).fail(function () {
+						window.console.log.apply('Exitoso');
+						log("Deferred is rejected");
+						pjQ.$(form).find(":button, :submit").removeAttr("disabled");
+					});					
+	
+				}	
+
+
+
+
+                				var $this = pjQ.$(this),
+					$back = $this.siblings(".abSelectorReturn");
+
+				$this.attr("disabled", "disabled");
+				$back.attr("disabled", "disabled");
+                						$this.removeAttr("disabled");
+						$back.removeAttr("disabled");
+						$this.children().eq(0).remove(); 

@@ -1,0 +1,31 @@
+el click en validate va a 
+
+http://127.0.0.1/BookiW/index.php?controller=pjFront&action=pjActionGetSummaryForm&cid=94&view=1&locale=&index=0
+
+Controlador: pjFront.controller.php
+Funcion: pjActionGetSummaryForm
+
+En el archivo pjABCalendar.js esta la funcion getSummaryForm hay se reocjen los datos del formulario
+
+ARCHIVOS MODIFICADOS PARA QUE NO APAREZCA DE NUEVO EL FORMULARIO
+BookiW/app/views/pjFront/pjActionGetSummaryForm.php
+BookiW/app/js/pjABCalendar.js funcion getSummaryForm()
+
+PARA VERIFICAR QUE FUNCIONE EN SAFARI Y EN EN ARCHIVO index.php de la raiz del sistema
+header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"'); 	
+session_name('ABCalendar');
+@session_start();
+
+
+http://127.0.0.1/BookiW/index.php?controller=pjFront&action=pjActionBookingSave&cid94
+
+
+http://127.0.0.1/BookiW/index.php?controller=pjFront&action=pjActionBookingSave&cid=94
+
+
+
+ALTER TABLE booking_abcalendar_agrupamiento ADD COLUMN orden int(11) NOT NULL;
+ALTER TABLE booking_abcalendar_agrupamiento ADD COLUMN nombre_eng varchar(300) NOT NULL;
+ALTER TABLE booking_abcalendar_agrupamiento ADD COLUMN key_words varchar(500) NOT NULL;
+ALTER TABLE booking_abcalendar_agrupamiento ADD COLUMN key_words_eng varchar(500) NOT NULL;
+ALTER TABLE booking_abcalendar_agrupamiento ADD COLUMN tags_eng varchar(255) NOT NULL;

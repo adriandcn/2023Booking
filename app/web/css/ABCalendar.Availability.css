@@ -1,0 +1,230 @@
+@CHARSET "UTF-8";
+.abAvailability{
+	color: #999;
+	background-color: #fff;
+	font: normal 12px/14px Verdana, Arial, sans-serif;
+	width: 100%;
+	overflow: hidden;
+}
+.abAvailability a:link,
+.abAvailability a:visited,
+.abAvailability a:active,
+.abAvailability a:hover,
+.abAvailability a:focus{
+	color: #63A8C9;
+	text-decoration: none;
+}
+.abAvailability a:hover{
+	text-decoration: underline;
+}
+/* */
+.abCal-row:before,
+.abCal-row:after{
+	content: "";
+	display: table;
+	zoom: 1;
+}
+.abCal-row:after{
+	clear: both;
+}
+.abCal-container{
+	clear: both;
+	overflow: hidden;
+}
+.abCal-calendars{
+	float: left;
+	width: 30%;
+}
+.abCal-dates{
+	float: left;
+	overflow-y: hidden;
+	overflow-x: auto;
+	width: 70%;
+}
+.abCal-scroll{
+	min-width: 713px;
+}
+.abCal-title{
+	border-bottom: solid 1px #ccc;
+	height: 31px;
+	line-height: 31px;
+	margin: 0 0 7px 0;
+	padding: 0 2px 7px 5px;
+	overflow: hidden;
+}
+.abCal-title .abCal-note{
+	line-height: 18px;
+	padding: 5px 0 0; 
+}
+.abCal-head{
+	border-bottom: solid 1px #ccc;
+	height: 64px;
+	margin: 0 0 7px 0;
+	padding: 0 0 7px 0;
+	width: 100%;
+}
+.abCal-head-row{
+	overflow: hidden;
+	margin: 0 0 1px 0;
+}
+.abCal-head-row span{
+	background-color: #EDECEE;
+	color: #B6B2B1;
+	display: block;
+	float: left;
+	font-weight: bold;
+	height: 29px;
+	line-height: 29px;
+	margin: 0;
+	text-align: center;
+	width: 23px;
+}
+.abCal-head-row a{
+	text-decoration: underline !important;
+}
+.abCal-program{
+	border-bottom: solid 1px #ccc;
+	height: 31px;
+	margin: 0 0 7px 0;
+	padding: 0 0 7px 0;
+	width: 100%;
+}
+.abCal-program a:link, .abCal-program a:visited, .abCal-program a:active, .abCal-program span{
+	display: block;
+	float: left;
+	height: 31px;
+	line-height: 31px;
+	margin: 0;
+	text-align: center;
+	text-decoration: none;
+	width: 23px;
+}
+a.abCal-prev-month:link,
+a.abCal-prev-month:active,
+a.abCal-prev-month:visited,
+a.abCal-prev-month:focus,
+a.abCal-prev-month:hover{
+	background: none;
+	float: left;
+	font-weight: normal;
+	margin: 0 0 0 5px;
+}
+a.abCal-next-month:link,
+a.abCal-next-month:active,
+a.abCal-next-month:visited,
+a.abCal-next-month:focus,
+a.abCal-next-month:hover{
+	background: none;
+	float: right;
+	font-weight: normal;
+	margin: 0 5px 0 0;
+}
+.abAvailability .abCal-head-row a:link, 
+.abAvailability .abCal-head-row a:visited, 
+.abAvailability .abCal-head-row a:active, 
+.abAvailability .abCal-head-row a:hover, 
+.abAvailability .abCal-head-row a:focus{
+	color: #fff;
+}
+.abAvailability .abCal-head-row span,
+.abAvailability .abCal-program span{
+	background-image: url(../img/dot.gif);
+	background-position: top right;
+	background-repeat: repeat-y;
+}
+
+.abAvailability .abCal-program span.abCal-imgOuter{
+	position: relative;
+	overflow: hidden;
+}
+.abAvailability .abCal-program span .abCal-imgWrap{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: auto;
+	height: 100%;
+	margin: 0 1px 0 0;
+}
+.abAvailability .abCal-program .abCal-img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/dot.gif) top right repeat-y;
+	/*padding: 0 1px 0 0;*/
+}
+
+/* Menu */
+.abAvailability .abMenu{
+	height: 33px;
+	overflow: hidden;
+}
+.abAvailability .abMenu:before,
+.abAvailability .abMenu:after{
+	content: "";
+	display: table;
+	zoom: 1;
+}
+.abAvailability .abMenu:after{
+	clear: both;
+}
+.abAvailability .abMenuList{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.abAvailability .abMenuList li{
+	float: left;
+}
+.abAvailability .abMenuList a{
+	display: inline-block;
+}
+.abAvailability .abMenuNav{
+	float: left;
+	margin: 3px 0 0 3px;
+}
+.abAvailability .abMenuNav li{
+	padding: 5px;
+}
+.abAvailability .abMenuNav a{
+	float: none !important;
+	width: 10px !important;
+	height: 17px !important;
+	text-decoration: none;
+}
+.abAvailability .abMenuLocale{
+	float: right;
+	margin: 5px 2px 0 0;
+}
+.abAvailability .abMenuLocale li{
+	height: 13px;
+	padding: 5px 5px 5px 0;
+}
+.abAvailability .abMenuLocale a{
+	border: solid 1px #fff;
+	vertical-align: top;
+	width: 16px;
+	height: 11px;
+}
+.abAvailability .abMenuLocale a.abLocaleFocus,
+.abAvailability .abMenuLocale a:hover{
+	border: solid 1px #000;
+}
+.abAvailability .abMenuLocale img{
+	vertical-align: top;
+	border: none;
+	width: 16px;
+	height: 11px;
+}
+@media screen and (min-width: 1040px) {
+	.abAvailability .abCal-program a:link, 
+	.abAvailability .abCal-program a:visited, 
+	.abAvailability .abCal-program a:active, 
+	.abAvailability .abCal-program span,
+	.abAvailability .abCal-head-row span{
+		width: 3.225806451612903%;
+	}
+}
