@@ -45,7 +45,6 @@ class pjPriceModel extends pjPriceAppModel
     		->findAll()
     		->getData();
 
-		
 		$default_price_arr = $this->reset()
 			->where('t1.foreign_id', $foreign_id)
 			->where("(t1.date_from IS NULL OR t1.date_from = '0000-00-00')")
@@ -59,9 +58,7 @@ class pjPriceModel extends pjPriceAppModel
 			$price_arr[$k]['ts_from'] = strtotime($item['date_from']);
 			$price_arr[$k]['ts_to'] = strtotime($item['date_to']);
     	}
-		print_r($default_price_arr);
-		print_r("query");
-		print_r($price_arr);
+    	
     	return compact('price_arr', 'default_price_arr');
 	}
 	
@@ -221,6 +218,7 @@ class pjPriceModel extends pjPriceAppModel
 		$isoDayOfWeek = $startDay > 0 ? $startDay : 7; //1-7 (Fix for versions < PHP 5.1.0, else use date("N")
 		
 
+
     	extract($this->queryData($foreign_id, $date_from, $date_to, $options, $adults, $children));
     	
     	$mask = array(1 => 'mon', 2 => 'tue', 3 => 'wed', 4 => 'thu', 5 => 'fri', 6 => 'sat', 7 => 'sun');
@@ -235,7 +233,8 @@ class pjPriceModel extends pjPriceAppModel
     			$j = 1;
     		}
     		$date = mktime(0, 0, 0, $startM, $startD + ($i - 1), $startY);
-    		
+    		print_r("testerr");
+			print_r($date);
     		# Find out min price for current date----//
     		$priceMin[$date] = 99999999; //init
     		$priceNum[$date] = count($default_price_arr);
