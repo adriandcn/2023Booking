@@ -210,6 +210,11 @@ class pjPriceModel extends pjPriceAppModel
     	list($startY, $startM, $startD) = explode("-", $date_from);
     	$from = strtotime($date_from);
     	$nights = ceil((strtotime($date_to) - $from) / 86400);
+
+
+		print_r($from);
+		print_r($nights);
+		print_r("acn2");
     	if ($options['o_price_based_on'] == 'days')
     	{
     		$nights += 1;

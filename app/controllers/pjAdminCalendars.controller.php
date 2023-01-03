@@ -483,12 +483,8 @@ class pjAdminCalendars extends pjAdmin
 			if (pjObject::getPlugin('pjPrice') !== NULL && $this->option_arr['o_price_plugin'] == 'price')
 			{
 				
-				print_r(date("Y-m-d", mktime(0, 0, 0, $month, 1, $year)));
-				print_r("here adrian");
-				print_r(date("Y-m-d", mktime(0, 0, 0, $month + $view, 1, $year)));
-				print_r("here adrian2");
-				print_r($this->option_arr);
-				print_r("here adrian3");
+			
+				print_r("here error");
 				
 				$price_arr = pjPriceModel::factory()->getPricePerDay(
 					$cid,
@@ -496,7 +492,7 @@ class pjAdminCalendars extends pjAdmin
 					date("Y-m-d", mktime(0, 0, 0, $month + $view, 1, $year)),
 					$this->option_arr
 				);
-				print_r($price_arr);
+			
 				$ABCalendar
 					->set('prices', $price_arr['priceData'])
 					->set('showPrices', true);
