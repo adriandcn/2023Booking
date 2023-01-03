@@ -45,8 +45,7 @@ class pjPriceModel extends pjPriceAppModel
     		->findAll()
     		->getData();
 
-			print_r("query");
-			print_r($price_arr);
+		
 		$default_price_arr = $this->reset()
 			->where('t1.foreign_id', $foreign_id)
 			->where("(t1.date_from IS NULL OR t1.date_from = '0000-00-00')")
@@ -60,7 +59,9 @@ class pjPriceModel extends pjPriceAppModel
 			$price_arr[$k]['ts_from'] = strtotime($item['date_from']);
 			$price_arr[$k]['ts_to'] = strtotime($item['date_to']);
     	}
-    	
+		print_r($default_price_arr);
+		print_r("query");
+		print_r($price_arr);
     	return compact('price_arr', 'default_price_arr');
 	}
 	
