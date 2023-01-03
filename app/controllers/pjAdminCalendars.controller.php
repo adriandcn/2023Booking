@@ -484,8 +484,6 @@ class pjAdminCalendars extends pjAdmin
 			{
 				
 			
-				print_r("here error");
-				
 				$price_arr = pjPriceModel::factory()->getPricePerDay(
 					$cid,
 					date("Y-m-d", mktime(0, 0, 0, $month, 1, $year)),
@@ -497,7 +495,7 @@ class pjAdminCalendars extends pjAdmin
 					->set('prices', $price_arr['priceData'])
 					->set('showPrices', true);
 
-					print_r($ABCalendar);
+				
 			}
 		}
 
@@ -548,7 +546,7 @@ class pjAdminCalendars extends pjAdmin
 			}
 
 			$this->__getCalendar($this->getForeignId(), date("Y"), date("n"));
-			print_r($_GET['id']);
+		
 			$this->appendJs('jquery.datagrid.js', PJ_FRAMEWORK_LIBS_PATH . 'pj/js/');
 			$this->appendCss('index.php?controller=pjFront&action=pjActionLoadCss&cid=' . $this->getForeignId() . '&' . rand(1,99999), PJ_INSTALL_URL, true);
 			$this->appendJs('pjAdminCalendars.js');
