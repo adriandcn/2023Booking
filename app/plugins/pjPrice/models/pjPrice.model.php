@@ -35,9 +35,7 @@ class pjPriceModel extends pjPriceAppModel
 	
 	private function queryData($foreign_id, $date_from, $date_to, $options, $adults=null, $children=null)
 	{
-		print_r("error query");
-		print_r($date_from);
-		print_r($date_to);
+	
 		$price_arr = $this->reset()
     		->where('t1.foreign_id', $foreign_id)
     		->where(sprintf("((t1.date_from BETWEEN '%1\$s' AND '%2\$s') OR
@@ -50,8 +48,12 @@ class pjPriceModel extends pjPriceAppModel
 
 		$default_price_arr = $this->reset()
 			->where('t1.foreign_id', $foreign_id)
+		
 			->where("(t1.date_from IS NULL OR t1.date_from = '2023-01-01')")
 			->where("(t1.date_to IS NULL OR t1.date_to = '2023-01-01')")
+			//changed AC 01032023
+		//	->where("(t1.date_from IS NULL OR t1.date_from = '0000-00-00')")
+		//	->where("(t1.date_to IS NULL OR t1.date_to = '0000-00-00')")
 			->orderBy('t1.id ASC')
     		->findAll()
     		->getData();
@@ -200,12 +202,7 @@ class pjPriceModel extends pjPriceAppModel
 	public function getPricePerDay($foreign_id, $date_from, $date_to, $options, $adults=null, $children=null)
     {
 
-		print_r("proceModel");
-
-		
-
-
-    	list($startY, $startM, $startD) = explode("-", $date_from);
+		list($startY, $startM, $startD) = explode("-", $date_from);
     	$from = strtotime($date_from);
     	$nights = ceil((strtotime($date_to) - $from) / 86400);
 
@@ -220,13 +217,10 @@ class pjPriceModel extends pjPriceAppModel
     	$endDay = date("w", strtotime($date_to));
 		$isoDayOfWeek = $startDay > 0 ? $startDay : 7; //1-7 (Fix for versions < PHP 5.1.0, else use date("N")
 		
-		print_r("testerr12");
-
     	extract($this->queryData($foreign_id, $date_from, $date_to, $options, $adults, $children));
     	
     	$mask = array(1 => 'mon', 2 => 'tue', 3 => 'wed', 4 => 'thu', 5 => 'fri', 6 => 'sat', 7 => 'sun');
-		print_r("testerr1");
-		print_r($mask);
+	
     	$price = $discount = 0;
     	$j = $isoDayOfWeek;
     	$season = $pricePerNight = $pricePerDay = $priceMin = $priceNum = array();
@@ -238,8 +232,6 @@ class pjPriceModel extends pjPriceAppModel
     		}
     	
 		
-    		print_r("testerr");
-			print_r($date);
     		# Find out min price for current date----//
     		$priceMin[$date] = 99999999; //init
     		$priceNum[$date] = count($default_price_arr);
