@@ -447,9 +447,7 @@ class pjAdminCalendars extends pjAdmin
 	private function __getCalendar($cid, $year, $month, $view=1)
 	{
 
-		print_r($cid);
-		print_r($year);
-		print_r($month);
+		
 	
 		
 		$ABCalendar = new pjABCalendar();
