@@ -135,7 +135,7 @@ class pjReservationModel extends pjAppModel
 			}
 			$dt_from = strtotime($res['date_from']);
 			$dt_to = strtotime($res['date_to']);
-			print_r("here2");
+			
 
 			for($i = $dt_from; $i <= $dt_to; $i = strtotime('+1 day', $i))
 			{
@@ -179,7 +179,7 @@ class pjReservationModel extends pjAppModel
 		}
 
 		ksort($arr);
-
+		print_r($arr);
 		foreach($arr as $timestamp => $v)
 		{
 			$count = 0;
