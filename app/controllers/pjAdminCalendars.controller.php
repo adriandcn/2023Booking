@@ -533,9 +533,9 @@ class pjAdminCalendars extends pjAdmin
 				}
 				$this->setForeignId($_GET['id']);
 			}
-print_r($_GET['id']);
+
 			$this->__getCalendar($this->getForeignId(), date("Y"), date("n"));
-			
+			print_r($_GET['id']);
 			$this->appendJs('jquery.datagrid.js', PJ_FRAMEWORK_LIBS_PATH . 'pj/js/');
 			$this->appendCss('index.php?controller=pjFront&action=pjActionLoadCss&cid=' . $this->getForeignId() . '&' . rand(1,99999), PJ_INSTALL_URL, true);
 			$this->appendJs('pjAdminCalendars.js');
