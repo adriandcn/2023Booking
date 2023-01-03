@@ -35,6 +35,9 @@ class pjPriceModel extends pjPriceAppModel
 	
 	private function queryData($foreign_id, $date_from, $date_to, $options, $adults=null, $children=null)
 	{
+		print_r("error query");
+		print_r($date_from);
+		print_r($date_to);
 		$price_arr = $this->reset()
     		->where('t1.foreign_id', $foreign_id)
     		->where(sprintf("((t1.date_from BETWEEN '%1\$s' AND '%2\$s') OR
