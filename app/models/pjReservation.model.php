@@ -112,17 +112,16 @@ class pjReservationModel extends pjAppModel
 			->where("( (`date_from` BETWEEN '$date_from' AND '$date_to') OR (`date_to` BETWEEN '$date_from' AND '$date_to'))")
 			->findAll()
 			->getData();
-			print_r("( (`date_from` BETWEEN '$date_from' AND '$date_to') OR (`date_to` BETWEEN '$date_from' AND '$date_to'))");
+		
 		if (count($r_arr) === 0)
 		{
 			return array();
 		}
-
 		$nights_mode = false;
 		if ($option_arr['o_price_based_on'] == 'nights')
 		{
 			$nights_mode = true;
-		}
+		}	print_r($r_arr);
 		foreach ($r_arr as $res)
 		{
 			if(!empty($res['price_based_on']) && in_array($res['price_based_on'], array('nights', 'days')))
@@ -136,6 +135,8 @@ class pjReservationModel extends pjAppModel
 			}
 			$dt_from = strtotime($res['date_from']);
 			$dt_to = strtotime($res['date_to']);
+			print_r("here2");
+
 			for($i = $dt_from; $i <= $dt_to; $i = strtotime('+1 day', $i))
 			{
 				$arr[$i]['is_change_over'] = 0;
