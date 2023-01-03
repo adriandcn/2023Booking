@@ -217,7 +217,7 @@ class pjPriceModel extends pjPriceAppModel
     	$endDay = date("w", strtotime($date_to));
 		$isoDayOfWeek = $startDay > 0 ? $startDay : 7; //1-7 (Fix for versions < PHP 5.1.0, else use date("N")
 		
-
+		print_r("testerr12");
 
     	extract($this->queryData($foreign_id, $date_from, $date_to, $options, $adults, $children));
     	
