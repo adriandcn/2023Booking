@@ -45,6 +45,8 @@ class pjPriceModel extends pjPriceAppModel
     		->findAll()
     		->getData();
 
+			print_r("query");
+			print_r($price_arr);
 		$default_price_arr = $this->reset()
 			->where('t1.foreign_id', $foreign_id)
 			->where("(t1.date_from IS NULL OR t1.date_from = '0000-00-00')")
@@ -215,13 +217,8 @@ class pjPriceModel extends pjPriceAppModel
     	}
     	list($txtDayOfWeek, $startDay) = explode("-", date("D-w", $from)); //Mon-Sun, 0-6
     	$endDay = date("w", strtotime($date_to));
-		print_r("erracn");
-    	$isoDayOfWeek = $startDay > 0 ? $startDay : 7; //1-7 (Fix for versions < PHP 5.1.0, else use date("N")
-		print_r("acn4");
-
+		$isoDayOfWeek = $startDay > 0 ? $startDay : 7; //1-7 (Fix for versions < PHP 5.1.0, else use date("N")
 		
-		print_r($isoDayOfWeek);
-
 
     	extract($this->queryData($foreign_id, $date_from, $date_to, $options, $adults, $children));
     	
