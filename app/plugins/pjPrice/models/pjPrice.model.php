@@ -50,8 +50,8 @@ class pjPriceModel extends pjPriceAppModel
 
 		$default_price_arr = $this->reset()
 			->where('t1.foreign_id', $foreign_id)
-			->where("(t1.date_from IS NULL OR t1.date_from = '0000-00-00')")
-			->where("(t1.date_to IS NULL OR t1.date_to = '0000-00-00')")
+			->where("(t1.date_from IS NULL OR t1.date_from = '2023-01-01')")
+			->where("(t1.date_to IS NULL OR t1.date_to = '2023-01-01')")
 			->orderBy('t1.id ASC')
     		->findAll()
     		->getData();
