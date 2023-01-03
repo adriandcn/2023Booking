@@ -196,6 +196,17 @@ class pjPriceModel extends pjPriceAppModel
 	
 	public function getPricePerDay($foreign_id, $date_from, $date_to, $options, $adults=null, $children=null)
     {
+
+		print_r("proceModel");
+
+		print_r($foreign_id);
+		print_r($date_from);
+		print_r($date_to);
+		print_r($options);
+		
+		print_r("acn");
+
+
     	list($startY, $startM, $startD) = explode("-", $date_from);
     	$from = strtotime($date_from);
     	$nights = ceil((strtotime($date_to) - $from) / 86400);
