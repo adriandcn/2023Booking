@@ -472,7 +472,7 @@ class pjAdminCalendars extends pjAdmin
 			->setDayNames(__('day_names', true))
 			->setMonthNames(__('months', true))
 		;
-		print_r($ABCalendar);
+		
 		
 		if (pjObject::getPlugin('pjPeriod') !== NULL && $this->option_arr['o_price_plugin'] == 'period')
 		{
@@ -482,7 +482,7 @@ class pjAdminCalendars extends pjAdmin
 		{
 			if (pjObject::getPlugin('pjPrice') !== NULL && $this->option_arr['o_price_plugin'] == 'price')
 			{
-				print_r("here");
+		
 				$price_arr = pjPriceModel::factory()->getPricePerDay(
 					$cid,
 					date("Y-m-d", mktime(0, 0, 0, $month, 1, $year)),
