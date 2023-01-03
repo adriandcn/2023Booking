@@ -448,6 +448,10 @@ class pjAdminCalendars extends pjAdmin
 	{
 
 		print_r($cid);
+		print_r($year);
+		print_r($month);
+		print_r($view);
+		
 		$ABCalendar = new pjABCalendar();
 		$ABCalendar
 			->setShowNextLink((int) $view > 1 ? false : true)
