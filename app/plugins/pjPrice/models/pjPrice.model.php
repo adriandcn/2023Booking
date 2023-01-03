@@ -232,7 +232,8 @@ class pjPriceModel extends pjPriceAppModel
     		{
     			$j = 1;
     		}
-    		$date = mktime(0, 0, 0, $startM, $startD + ($i - 1), $startY);
+    	
+		
     		print_r("testerr");
 			print_r($date);
     		# Find out min price for current date----//
