@@ -212,9 +212,8 @@ class pjPriceModel extends pjPriceAppModel
     	$nights = ceil((strtotime($date_to) - $from) / 86400);
 
 
-		print_r($from);
-		print_r($nights);
-		print_r("acn2");
+		
+	
     	if ($options['o_price_based_on'] == 'days')
     	{
     		$nights += 1;
@@ -222,7 +221,12 @@ class pjPriceModel extends pjPriceAppModel
     	list($txtDayOfWeek, $startDay) = explode("-", date("D-w", $from)); //Mon-Sun, 0-6
     	$endDay = date("w", strtotime($date_to));
     	$isoDayOfWeek = $startDay > 0 ? $startDay : 7; //1-7 (Fix for versions < PHP 5.1.0, else use date("N")
-    	
+		print_r("acn4");
+
+		print_r($endDay);
+		print_r($isoDayOfWeek);
+
+
     	extract($this->queryData($foreign_id, $date_from, $date_to, $options, $adults, $children));
     	
     	$mask = array(1 => 'mon', 2 => 'tue', 3 => 'wed', 4 => 'thu', 5 => 'fri', 6 => 'sat', 7 => 'sun');
