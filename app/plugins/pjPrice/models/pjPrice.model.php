@@ -199,12 +199,7 @@ class pjPriceModel extends pjPriceAppModel
 
 		print_r("proceModel");
 
-		print_r($foreign_id);
-		print_r($date_from);
-		print_r($date_to);
-		print_r($options);
 		
-		print_r("acn");
 
 
     	list($startY, $startM, $startD) = explode("-", $date_from);
@@ -220,10 +215,11 @@ class pjPriceModel extends pjPriceAppModel
     	}
     	list($txtDayOfWeek, $startDay) = explode("-", date("D-w", $from)); //Mon-Sun, 0-6
     	$endDay = date("w", strtotime($date_to));
+		print_r("erracn");
     	$isoDayOfWeek = $startDay > 0 ? $startDay : 7; //1-7 (Fix for versions < PHP 5.1.0, else use date("N")
 		print_r("acn4");
 
-		print_r($endDay);
+		
 		print_r($isoDayOfWeek);
 
 
