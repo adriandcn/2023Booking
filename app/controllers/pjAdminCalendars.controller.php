@@ -473,7 +473,7 @@ class pjAdminCalendars extends pjAdmin
 			->setMonthNames(__('months', true))
 		;
 
-		print_r($ABCalendar);
+		
 		if (pjObject::getPlugin('pjPeriod') !== NULL && $this->option_arr['o_price_plugin'] == 'period')
 		{
 			$ABCalendar->set('periods', pjPeriodModel::factory()->getPeriodsPerDay($cid, $month, $year, $view, $this->option_arr['o_price_based_on'] == 'days'));

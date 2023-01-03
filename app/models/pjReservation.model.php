@@ -95,7 +95,7 @@ class pjReservationModel extends pjAppModel
 
 	public function getInfo($calendar_id, $date_from, $date_to, $option_arr=array(), $id=NULL, $show_calendar=NULL)
 	{
-
+		print_r("model");
 		print_r($calendar_id);
 		print_r($date_from);
 		print_r($date_to);
@@ -112,7 +112,7 @@ class pjReservationModel extends pjAppModel
 			->where("( (`date_from` BETWEEN '$date_from' AND '$date_to') OR (`date_to` BETWEEN '$date_from' AND '$date_to'))")
 			->findAll()
 			->getData();
-
+			print_r($r_arr);
 		if (count($r_arr) === 0)
 		{
 			return array();
