@@ -112,7 +112,7 @@ class pjReservationModel extends pjAppModel
 			->where("( (`date_from` BETWEEN '$date_from' AND '$date_to') OR (`date_to` BETWEEN '$date_from' AND '$date_to'))")
 			->findAll()
 			->getData();
-			print_r($r_arr);
+			print_r("( (`date_from` BETWEEN '$date_from' AND '$date_to') OR (`date_to` BETWEEN '$date_from' AND '$date_to'))");
 		if (count($r_arr) === 0)
 		{
 			return array();
