@@ -222,7 +222,8 @@ class pjPriceModel extends pjPriceAppModel
     	extract($this->queryData($foreign_id, $date_from, $date_to, $options, $adults, $children));
     	
     	$mask = array(1 => 'mon', 2 => 'tue', 3 => 'wed', 4 => 'thu', 5 => 'fri', 6 => 'sat', 7 => 'sun');
-
+		print_r("testerr1");
+		print_r($mask);
     	$price = $discount = 0;
     	$j = $isoDayOfWeek;
     	$season = $pricePerNight = $pricePerDay = $priceMin = $priceNum = array();
