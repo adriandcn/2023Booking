@@ -96,9 +96,7 @@ class pjReservationModel extends pjAppModel
 	public function getInfo($calendar_id, $date_from, $date_to, $option_arr=array(), $id=NULL, $show_calendar=NULL)
 	{
 		print_r("model");
-		print_r($calendar_id);
-		print_r($date_from);
-		print_r($date_to);
+		
 		$arr = array();
 		$this->reset();
 		if (!is_null($id))
@@ -121,7 +119,7 @@ class pjReservationModel extends pjAppModel
 		if ($option_arr['o_price_based_on'] == 'nights')
 		{
 			$nights_mode = true;
-		}	print_r($r_arr);
+		}	
 		foreach ($r_arr as $res)
 		{
 			if(!empty($res['price_based_on']) && in_array($res['price_based_on'], array('nights', 'days')))
@@ -179,7 +177,7 @@ class pjReservationModel extends pjAppModel
 		}
 
 		ksort($arr);
-		print_r($arr);
+	
 		foreach($arr as $timestamp => $v)
 		{
 			$count = 0;
@@ -209,7 +207,7 @@ class pjReservationModel extends pjAppModel
 			}
 			$arr[$timestamp]['dt'] = date("d.m.Y", $timestamp);
 		}
-
+		print_r($arr);
 		return $arr;
 	}
 }
