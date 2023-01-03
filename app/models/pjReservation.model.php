@@ -95,7 +95,7 @@ class pjReservationModel extends pjAppModel
 
 	public function getInfo($calendar_id, $date_from, $date_to, $option_arr=array(), $id=NULL, $show_calendar=NULL)
 	{
-		print_r("model");
+		
 		
 		$arr = array();
 		$this->reset();
@@ -207,7 +207,7 @@ class pjReservationModel extends pjAppModel
 			}
 			$arr[$timestamp]['dt'] = date("d.m.Y", $timestamp);
 		}
-		print_r($arr);
+	
 		return $arr;
 	}
 }

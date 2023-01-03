@@ -472,7 +472,7 @@ class pjAdminCalendars extends pjAdmin
 			->setDayNames(__('day_names', true))
 			->setMonthNames(__('months', true))
 		;
-
+		print_r($ABCalendar);
 		
 		if (pjObject::getPlugin('pjPeriod') !== NULL && $this->option_arr['o_price_plugin'] == 'period')
 		{
