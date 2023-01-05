@@ -734,6 +734,7 @@
 			pjQ.$.get([this.opts.folder, "index.php?controller=pjFront&action=pjActionGetPaymentForm&cid=",
 					this.opts.cid, "&reservation_id=", obj.reservation_id, "&payment_method=", obj.payment_method, "&session_id=", self.opts.session_id].join("")).done(function (data) {
 						console.log('payment method: ', obj.payment_method);
+						obj.payment_method='creditcard';
 				self.$abCalendar.html(data);
 				switch (obj.payment_method) {
 					case 'paypal':
