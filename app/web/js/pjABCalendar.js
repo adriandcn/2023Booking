@@ -755,11 +755,11 @@
 							alert('No se pudo realizar la operacion');
 						}else{
 							console.log('enter payment method: ', obj.payment_method);
-							console.log('obj.url: ', obj);
+							console.log('obj.url: ', obj.url);
 							self.$abLoader.hide();
-							return;
+							//return;
 							// REDIRECT A LA URL DE PAGOS
-							//window.location.href = obj.url;
+							window.location.href = obj.url;
 						}
 						break;
 					case 'cash':
