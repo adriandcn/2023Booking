@@ -733,7 +733,7 @@
 
 			pjQ.$.get([this.opts.folder, "index.php?controller=pjFront&action=pjActionGetPaymentForm&cid=",
 					this.opts.cid, "&reservation_id=", obj.reservation_id, "&payment_method=", obj.payment_method, "&session_id=", self.opts.session_id].join("")).done(function (data) {
-
+						console.log('payment method: ', obj.payment_method);
 				self.$abCalendar.html(data);
 				switch (obj.payment_method) {
 					case 'paypal':
@@ -753,6 +753,7 @@
 							self.getCalendar.call(self, self.year, self.month);
 							alert('No se pudo realizar la operacion');
 						}else{
+							console.log('enter payment method: ', obj.payment_method);
 							console.log('obj.url: ', obj);
 							self.$abLoader.hide();
 							//return;
