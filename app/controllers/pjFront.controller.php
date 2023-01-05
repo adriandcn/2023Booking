@@ -1414,39 +1414,50 @@ class pjFront extends pjAppController
 				/* ********************************************************** */
 				/* ********************************************************** */
 
-				// TODO: CAMBIAR LAS CREDENCIALES DE LA PASARELA DE PAGOS
-				// $url = "https://app.redypago.com/api/setorder/"; //URL del servicio web REST
-				$url = 'https://app.pagomedios.com/api/setorder/'; //URL del servicio web REST
-				$header = array( 'Content-Type: application/json' );
+			
+	/*ARMO EL ARRAY CON LA INFORMACION PARA payphone*/
+	$dataOrden = array(	
+		//'commerce_id' => '8226', //ID unico por comercio test
+		//'commerce_id' => '8116', //ID unico por comercio produccion
+			'documentId' => $data['c_cedula'] , //Identificaci�n del tarjeta habiente (RUC, C�dula, Pasaporte)
+		//	'customer_name' => $data['c_name'], //Nombres del tarjeta habiente
+		//	'customer_lastname' => $data['c_lastname'], //Apellidos del tarjeta habiente
+			'phoneNumber' => $data['c_phone'],  //Tel�fonos del tarjeta habiente
+		//	'customer_address' => $data['c_address'],  //Direcci�n del tarjeta habiente
+			'email' => $data['c_email'],  //Correo electr�nico del tarjeta habiente
+	//		'customer_language' => 'es',  //Idioma del tarjeta habiente
+	//		'order_description' => $nombreCalendario,  //Descripci�n de la �rden
+			'amount' => $data['amount'], //Monto total de la �rden
+			'tax' => 12, //iMPUESTOS
+			'amountWithoutTax' =>$data['amount'], //Monto sin impuestos
+			
+			'clientTransactionId' =>$reservation_id, 
+			
+		//	'id' => $reservation_id, //id de la reservacion
+			//'response_url' => PJ_URL_LARAVEL.'/confirmacion',
+		'response_url' => 'https://iwannatrip.com/confirmacionBeta',
+		
+		);
 
-				/*ARMO EL ARRAY CON LA INFORMACION PARA PAGO MEDIOS*/
-				$dataOrden = array(
-					'commerce_id' => '8226', //ID unico por comercio test
-					// 'commerce_id' => '8116', //ID unico por comercio produccion
-					'customer_id' => $data['c_cedula'] , //Identificaci�n del tarjeta habiente (RUC, C�dula, Pasaporte)
-					'customer_name' => $data['c_name'], //Nombres del tarjeta habiente
-					'customer_lastname' => $data['c_lastname'], //Apellidos del tarjeta habiente
-					'customer_phones' => $data['c_phone'],  //Tel�fonos del tarjeta habiente
-					'customer_address' => $data['c_address'],  //Direcci�n del tarjeta habiente
-					'customer_email' => $data['c_email'],  //Correo electr�nico del tarjeta habiente
-					'customer_language' => 'es',  //Idioma del tarjeta habiente
-					'order_description' => $nombreCalendario,  //Descripci�n de la �rden
-					'order_amount' => $data['amount'], //Monto total de la �rden
-					'order_id' => $reservation_id, //id de la reservacion
-					// 'response_url' => PJ_URL_LARAVEL1.'/confirmacion',
-					'response_url' => 'https://iwannatrip.com/confirmacionBeta',
-				);
+	//$url = "https://app.pagomedios.com/api/setorder/"; //URL del servicio web REST
+$url = "https://pay.payphonetodoesposible.com/api/button/V2/Confirm/";
+	$params = http_build_query( $dataOrden ); //Tranformamos un array en formato GET
 
-				$params = http_build_query( $dataOrden ); //Tranformamos un array en formato GET
-				//Consumo del servicio Rest
-				$curl = curl_init();
-				curl_setopt($curl, CURLOPT_URL, $url.'?'.$params);
-				curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
-				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-				curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-				$response = curl_exec($curl);
-				curl_close($curl);
+	$data = json_encode($dataOrden);
+//Iniciar Llamada
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, "https://pay.payphonetodoesposible.com/api/button/V2/Confirm");
+curl_setopt($curl, CURLOPT_POST, 1);
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+curl_setopt_array($curl, array(
+CURLOPT_HTTPHEADER => array(
+"Authorization: Bearer qHfKKza3RdNFijd_ncwEHPAX1kPG4jWG_FVJNIk6gLA3FfuuGCg-KLQRa9GSTZTEDk_uYV2t786McjZH-InCeYvRbih4mM7kKi06pBG6BWOIPZx9cakVh5-2Cn4c6Bny0Il8sB9_gmEorIdhxrxuIXN4rUMAxD2wPPiObGZqJdpb5BQL71igvY-2Fx0DQMcQ6plCzPbgjk8-Mf-OGgtA1eJKz1dCU42vvDw0kfVQzIZEGipAm0AirVFLTIK1hjCh9hU9DZ6344MyILOHYL7vTGz8EiwyrUSXR3jUC1KVOTJxNksc67Lw4ie5VDKFGbJqjHT0KA", "Content-Type:application/json"),
+));
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+$result = curl_exec($curl);
+curl_close($curl);
+
+				    	
 				$array = json_decode($response);
 
 				// SE HACE UNA SEGUNDA LLAMADA AL SERVICIO PARA LOS CASOS QUE EN EL PRIMER INTENTO
