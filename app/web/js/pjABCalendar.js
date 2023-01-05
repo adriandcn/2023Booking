@@ -749,7 +749,7 @@
 						}else{
 							console.log('obj.url: ', obj);
 							self.$abLoader.hide();
-							return;
+							//return;
 							// REDIRECT A LA URL DE PAGOS
 							window.location.href = obj.url;
 						}
