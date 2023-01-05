@@ -223,6 +223,7 @@
 			})
 			.on("click.ab", ".abSelectorConfirm", function () {
 				alert("here1");
+				console.log('here1: ') ;
 				var $this = pjQ.$(this),
 					$back = $this.siblings(".abSelectorReturn");
 
