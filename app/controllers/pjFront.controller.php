@@ -1188,8 +1188,6 @@ class pjFront extends pjAppController
 	public function pjActionBookingSave()
 	{
 
-
-
 		//****************************************************************//
 		// ACTUALIZO LA URL EN LA TABLA OPTION E INSERTO EL MD5 EN       //
 		// 			LA TABLA TOKENS 			         //
