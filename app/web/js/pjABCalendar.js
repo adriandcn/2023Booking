@@ -232,7 +232,7 @@
 				// console.log('SASDSSADASD: ', valorCupon) ;
 				// console.log('SASDSSADASD: ', cuponID) ;
 				console.log('self.opts.folder: ', self.opts.folder);
-
+				alert("here");
 				pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid, "&check=", checkUpdatePrice, "&cupon=", valorCupon, "&cupon_id=",cuponID, "&session_id=", self.opts.session_id].join("")).done(function (data) {
 				//pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid].join("")).done(function (data) {
 					if (data.code === undefined) {
