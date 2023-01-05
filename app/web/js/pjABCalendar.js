@@ -242,6 +242,7 @@
 					}
 					if (parseInt(data.code, 10) === 200)
 					{
+						console.log("DATA DE LA RESERVACION Adrian: ", data);
 						console.log("DATA DE LA RESERVACION: ", data);
 						self.getPaymentForm.call(self, data);
 					} else {
