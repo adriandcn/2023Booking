@@ -1453,13 +1453,16 @@ class pjFront extends pjAppController
 
 					$params = http_build_query( $dataOrden );
 					$curl = curl_init();
-					curl_setopt($curl, CURLOPT_URL, $url.'?'.$params);
-					curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
-					curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-					curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-					$response = curl_exec($curl);
-					curl_close($curl);
+				curl_setopt($curl, CURLOPT_URL, "https://pay.payphonetodoesposible.com/api/button/V2/Confirm");
+				curl_setopt($curl, CURLOPT_POST, 1);
+				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+				curl_setopt_array($curl, array(
+				CURLOPT_HTTPHEADER => array(
+				"Authorization: Bearer qHfKKza3RdNFijd_ncwEHPAX1kPG4jWG_FVJNIk6gLA3FfuuGCg-KLQRa9GSTZTEDk_uYV2t786McjZH-InCeYvRbih4mM7kKi06pBG6BWOIPZx9cakVh5-2Cn4c6Bny0Il8sB9_gmEorIdhxrxuIXN4rUMAxD2wPPiObGZqJdpb5BQL71igvY-2Fx0DQMcQ6plCzPbgjk8-Mf-OGgtA1eJKz1dCU42vvDw0kfVQzIZEGipAm0AirVFLTIK1hjCh9hU9DZ6344MyILOHYL7vTGz8EiwyrUSXR3jUC1KVOTJxNksc67Lw4ie5VDKFGbJqjHT0KA", "Content-Type:application/json"),
+				));
+				curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+				$result = curl_exec($curl);
+				curl_close($curl);
 					$array = json_decode($response);
 
 				}
