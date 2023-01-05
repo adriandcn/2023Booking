@@ -1187,6 +1187,9 @@ class pjFront extends pjAppController
 
 	public function pjActionBookingSave()
 	{
+
+
+
 		//****************************************************************//
 		// ACTUALIZO LA URL EN LA TABLA OPTION E INSERTO EL MD5 EN       //
 		// 			LA TABLA TOKENS 			         //
@@ -1413,6 +1416,7 @@ class pjFront extends pjAppController
 				/* ********************************************************** */
 				/* ********************************************************** */
 
+				// TODO: CAMBIAR LAS CREDENCIALES DE LA PASARELA DE PAGOS
 				// $url = "https://app.redypago.com/api/setorder/"; //URL del servicio web REST
 				$url = 'https://app.pagomedios.com/api/setorder/'; //URL del servicio web REST
 				$header = array( 'Content-Type: application/json' );
@@ -1431,8 +1435,8 @@ class pjFront extends pjAppController
 					'order_description' => $nombreCalendario,  //Descripci�n de la �rden
 					'order_amount' => $data['amount'], //Monto total de la �rden
 					'order_id' => $reservation_id, //id de la reservacion
-					'response_url' => PJ_URL_LARAVEL1.'/confirmacion',
-					//'response_url' => 'https://iwanatrip.com/confirmacionBeta',
+					// 'response_url' => PJ_URL_LARAVEL1.'/confirmacion',
+					'response_url' => 'https://iwannatrip.com/confirmacionBeta',
 				);
 
 				$params = http_build_query( $dataOrden ); //Tranformamos un array en formato GET
