@@ -1430,6 +1430,8 @@ class pjFront extends pjAppController
 				$url = "https://pay.payphonetodoesposible.com/api/button/V2/Confirm/";
 					$params = http_build_query( $dataOrden ); //Tranformamos un array en formato GET
 					$data = json_encode($dataOrden);
+					print_r($data);
+					exit;
 				//Iniciar Llamada
 				$curl = curl_init();
 				curl_setopt($curl, CURLOPT_URL, "https://pay.payphonetodoesposible.com/api/button/V2/Confirm");

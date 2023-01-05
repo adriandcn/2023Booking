@@ -156,7 +156,7 @@
 			this.$firstCell = null;
 			this.$secondCell = null;
 			this.message_type = null;
-			alert("here0");
+			
 			return this;
 		},
 		init: function (opts) {
@@ -222,8 +222,8 @@
 
 			})
 			.on("click.ab", ".abSelectorConfirm", function () {
-				alert("here1");
-				console.log('here1: ') ;
+				
+				
 				var $this = pjQ.$(this),
 					$back = $this.siblings(".abSelectorReturn");
 
@@ -234,7 +234,7 @@
 				// console.log('SASDSSADASD: ', valorCupon) ;
 				// console.log('SASDSSADASD: ', cuponID) ;
 				console.log('self.opts.folder: ', self.opts.folder);
-				alert("here2");
+				
 				pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid, "&check=", checkUpdatePrice, "&cupon=", valorCupon, "&cupon_id=",cuponID, "&session_id=", self.opts.session_id].join("")).done(function (data) {
 				//pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid].join("")).done(function (data) {
 					if (data.code === undefined) {
