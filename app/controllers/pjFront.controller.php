@@ -1423,7 +1423,7 @@ class pjFront extends pjAppController
 							'amountWithoutTax' =>$data['amount'], //Monto sin impuestos
 							'clientTransactionId' =>$reservation_id, 
 							//'response_url' => PJ_URL_LARAVEL.'/confirmacion',
-						'response_url' => 'https://iwannatrip.com/confirmacionBeta',
+						'response_url' => 'https://iwannatrip.com/confirmacion',
 						
 						);
 
