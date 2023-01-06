@@ -237,7 +237,7 @@
 				
 				pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid, "&check=", checkUpdatePrice, "&cupon=", valorCupon, "&cupon_id=",cuponID, "&session_id=", self.opts.session_id].join("")).done(function (data) {
 				//pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid].join("")).done(function (data) {
-					data.payment_method='creditcard';
+					//data.payment_method='creditcard';
 				console.log('Data Adroiam: ', data);
 				console.log('self Adroiam: ', self);
 				if (data.code === undefined) {
@@ -755,7 +755,7 @@
 							alert('No se pudo realizar la operacion');
 						}else{
 							console.log('enter payment method: ', obj.payment_method);
-							console.log('obj.url: ', 'https://pay.payphonetodoesposible.com/api/button/V2/Confirm');
+							console.log('obj.url: ', obj.url);
 							self.$abLoader.hide();
 							//return;
 							// REDIRECT A LA URL DE PAGOS
