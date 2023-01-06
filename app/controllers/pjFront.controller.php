@@ -1188,6 +1188,9 @@ class pjFront extends pjAppController
 	public function pjActionBookingSave()
 	{
 
+
+		print_r($data);
+exit;
 		//****************************************************************//
 		// ACTUALIZO LA URL EN LA TABLA OPTION E INSERTO EL MD5 EN       //
 		// 			LA TABLA TOKENS 			         //
@@ -1379,8 +1382,7 @@ class pjFront extends pjAppController
 				$urlCash = PJ_URL_LARAVEL1.'/confirmacionEfectivo/'.$tokenReserva;
 
 			}
-print_r($data);
-exit;
+
 			/*****************************************************************/
 			/*              PARA EL PAGO CON TARJETA DE CREDITO                  */
 			/*     ARMO LA INFORMACION Y REDIRECCIONO A PAGO MEDIOS  */
