@@ -1189,8 +1189,7 @@ class pjFront extends pjAppController
 	{
 
 
-		pjAppController::jsonResponse(array('status' => 'ERR', 'code' => 102, 'text' => 'Adrian Controller.'));
-exit;
+	
 		//****************************************************************//
 		// ACTUALIZO LA URL EN LA TABLA OPTION E INSERTO EL MD5 EN       //
 		// 			LA TABLA TOKENS 			         //
@@ -1387,7 +1386,8 @@ exit;
 			/*              PARA EL PAGO CON TARJETA DE CREDITO                  */
 			/*     ARMO LA INFORMACION Y REDIRECCIONO A PAGO MEDIOS  */
 			/*****************************************************************/
-			if (isset($data['payment_method']) && $data['payment_method'] == 'creditcard'){
+		//	if (isset($data['payment_method']) && $data['payment_method'] == 'creditcard'){
+			if (1==1){
 
 				$tokenReserva = md5($reservation_id);
 				$sql = "UPDATE booking_abcalendar_reservations SET token_consulta = '$tokenReserva'
