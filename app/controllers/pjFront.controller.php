@@ -1190,7 +1190,7 @@ class pjFront extends pjAppController
 
 
 		pjAppController::jsonResponse(array('status' => 'ERR', 'code' => 102, 'text' => 'Adrian Controller.'));
-
+exit;
 		//****************************************************************//
 		// ACTUALIZO LA URL EN LA TABLA OPTION E INSERTO EL MD5 EN       //
 		// 			LA TABLA TOKENS 			         //
