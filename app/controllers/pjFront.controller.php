@@ -1379,7 +1379,8 @@ class pjFront extends pjAppController
 				$urlCash = PJ_URL_LARAVEL1.'/confirmacionEfectivo/'.$tokenReserva;
 
 			}
-
+print_r($data);
+exit;
 			/*****************************************************************/
 			/*              PARA EL PAGO CON TARJETA DE CREDITO                  */
 			/*     ARMO LA INFORMACION Y REDIRECCIONO A PAGO MEDIOS  */
