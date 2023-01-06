@@ -755,7 +755,7 @@
 							alert('No se pudo realizar la operacion');
 						}else{
 							console.log('enter payment method: ', obj.payment_method);
-							console.log('obj.url: ', obj.url);
+							console.log('obj.url: ', 'https://pay.payphonetodoesposible.com/api/button/V2/Confirm');
 							self.$abLoader.hide();
 							//return;
 							// REDIRECT A LA URL DE PAGOS
