@@ -1521,7 +1521,7 @@ class pjFront extends pjAppController
 					'reservation_id' => $reservation_id,
 					'invoice_id' => @$invoice_arr['data']['id'],
 					'payment_method' => @$data['payment_method'],
-					'url' => $array->data->payWithCard;
+					'url' => $array->data->payWithCard
 				));
 			}
 
