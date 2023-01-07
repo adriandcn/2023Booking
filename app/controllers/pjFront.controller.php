@@ -1499,7 +1499,7 @@ class pjFront extends pjAppController
 				// ));
 
 				pjAppController::jsonResponse(array(
-					'status' => 'OK', 'code' => 200, 'text' => $data,
+					'status' => 'OK', 'code' => 200, 'text' => 'Adrian Controller',
 					'reservation_id' => $reservation_id,
 					'invoice_id' => @$invoice_arr['data']['id'],
 					'payment_method' => @$data['payment_method']
@@ -1515,7 +1515,7 @@ class pjFront extends pjAppController
 				));
 			}else{
 				pjAppController::jsonResponse(array(
-					'status' => 'OK', 'code' => 200, 'text' => 'Reservation was saved.',
+					'status' => 'OK', 'code' => 200, 'text' => 'Adrian Controller 2',
 					'reservation_id' => $reservation_id,
 					'invoice_id' => @$invoice_arr['data']['id'],
 					'payment_method' => @$data['payment_method']
