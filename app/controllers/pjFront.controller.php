@@ -756,7 +756,7 @@ class pjFront extends pjAppController
 
 			if($cuenta > -1){
 
-				echo '01';
+				//echo '01';
 				$_SESSION[$this->defaultCalendar] = array_merge($_SESSION[$this->defaultCalendar], $_POST);
 
 				if (pjObject::getPlugin('pjPrice') !== NULL && $this->option_arr['o_price_plugin'] == 'price')
@@ -1188,7 +1188,7 @@ class pjFront extends pjAppController
 	public function pjActionBookingSave()
 	{
 
-		echo '01 Adrian';
+		//echo '01 Adrian';
 	
 		//****************************************************************//
 		// ACTUALIZO LA URL EN LA TABLA OPTION E INSERTO EL MD5 EN       //
