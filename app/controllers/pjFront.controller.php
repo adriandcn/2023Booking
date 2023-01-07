@@ -1473,7 +1473,7 @@ class pjFront extends pjAppController
 				}
 
 				if($array->status == 1){
-					$urltdc = $array->data->payWithCard;
+					$urltdc = $array->payWithCard;
 				}else if($array->status == 0){
 					$urltdc = PJ_URL_LARAVEL1.'/errorpagotdc/'.$tokenReserva;
 				}
@@ -1482,8 +1482,8 @@ class pjFront extends pjAppController
 
 			if (isset($data['payment_method']) && $data['payment_method'] == 'creditcard'){
 
-				if($array->data->payWithCard){
-					$urltdc = $array->data->payWithCard;
+				if($array->payWithCard){
+					$urltdc = $array->payWithCard;
 				}else{
 					$urltdc = 1;
 				}
@@ -1521,7 +1521,7 @@ class pjFront extends pjAppController
 					'reservation_id' => $reservation_id,
 					'invoice_id' => @$invoice_arr['data']['id'],
 					'payment_method' => @$data['payment_method'],
-					'url' => $array->data->payWithCard
+					'url' => $array->payWithCard
 				));
 			}
 
