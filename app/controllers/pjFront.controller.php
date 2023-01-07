@@ -1517,7 +1517,7 @@ class pjFront extends pjAppController
 				));
 			}else{
 				pjAppController::jsonResponse(array(
-					'status' => 'OK', 'code' => 200, 'text' => $result,
+					'status' => 'OK', 'code' => 200, 'text' => $array,
 					'reservation_id' => $reservation_id,
 					'invoice_id' => @$invoice_arr['data']['id'],
 					'payment_method' => @$data['payment_method'],
