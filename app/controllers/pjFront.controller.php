@@ -1430,13 +1430,13 @@ class pjFront extends pjAppController
 						
 						);
 
-				$url = "https://pay.payphonetodoesposible.com/api/button/V2/Confirm/";
+				$url = "https://pay.payphonetodoesposible.com/api/button/Prepare";
 					$params = http_build_query( $dataOrden ); //Tranformamos un array en formato GET
 					$data = json_encode($dataOrden);
 				
 				//Iniciar Llamada
 				$curl = curl_init();
-				curl_setopt($curl, CURLOPT_URL, "https://pay.payphonetodoesposible.com/api/button/V2/Confirm");
+				curl_setopt($curl, CURLOPT_URL, "https://pay.payphonetodoesposible.com/api/button/Prepare");
 				curl_setopt($curl, CURLOPT_POST, 1);
 				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 				curl_setopt_array($curl, array(
@@ -1456,7 +1456,7 @@ class pjFront extends pjAppController
 					$idPosition = $idPosition ." payphone2";
 					$params = http_build_query( $dataOrden );
 					$curl = curl_init();
-				curl_setopt($curl, CURLOPT_URL, "https://pay.payphonetodoesposible.com/api/button/V2/Confirm");
+				curl_setopt($curl, CURLOPT_URL, "https://pay.payphonetodoesposible.com/api/button/Prepare");
 				curl_setopt($curl, CURLOPT_POST, 1);
 				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 				curl_setopt_array($curl, array(
