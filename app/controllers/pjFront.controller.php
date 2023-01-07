@@ -1187,7 +1187,7 @@ class pjFront extends pjAppController
 
 	public function pjActionBookingSave()
 	{
-
+		$idPosition = "Inicia";
 		//echo '01 Adrian';
 	
 		//****************************************************************//
@@ -1388,7 +1388,7 @@ class pjFront extends pjAppController
 			/*****************************************************************/
 		//	if (isset($data['payment_method']) && $data['payment_method'] == 'creditcard'){
 			if (1==1){
-
+				$idPosition = $idPosition ." Credit";
 				$tokenReserva = md5($reservation_id);
 				$sql = "UPDATE booking_abcalendar_reservations SET token_consulta = '$tokenReserva'
 						WHERE id = $reservation_id";
@@ -1449,11 +1449,11 @@ class pjFront extends pjAppController
 
 				    	
 				$array = json_decode($response);
-
+				$idPosition = $idPosition ." payphone";
 				// SE HACE UNA SEGUNDA LLAMADA AL SERVICIO PARA LOS CASOS QUE EN EL PRIMER INTENTO
 				// NO SE PUEDA OBTENER LA URL DE RESPUESTA
 				if(!$array->data->payment_url){
-
+					$idPosition = $idPosition ." payphone2";
 					$params = http_build_query( $dataOrden );
 					$curl = curl_init();
 				curl_setopt($curl, CURLOPT_URL, "https://pay.payphonetodoesposible.com/api/button/V2/Confirm");
