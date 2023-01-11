@@ -1427,7 +1427,7 @@ class pjFront extends pjAppController
 							'clientTransactionId' =>$reservation_id, 
 							//'response_url' => PJ_URL_LARAVEL.'/confirmacion',
 						'cancellationUrl'=> 'https://tuurl.com/response.php',
-						'responseUrl' => 'https://iwannatrip.com/confirmacion',
+						'responseUrl' => 'https://iwannatrip.com/confirmacionBeta',
 						
 						);
 
