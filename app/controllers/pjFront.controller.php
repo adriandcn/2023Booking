@@ -1421,12 +1421,12 @@ class pjFront extends pjAppController
 							'documentId' => $data['c_cedula'] , //Identificaci�n del tarjeta habiente (RUC, C�dula, Pasaporte)
 							//'phoneNumber' => $data['c_phone'],  //Tel�fonos del tarjeta habiente
 							//'email' => $data['c_email'],  //Correo electr�nico del tarjeta habiente
-							'amount' =>  $data['amount'], //Monto total de la �rden
-							'amountWithoutTax' =>  $data['amount'], //iMPUESTOS
+							'amount' => 100, //Monto total de la �rden
+							'amountWithoutTax' => 100, //iMPUESTOS
 							//'amountWithoutTax' =>$data['amount'], //Monto sin impuestos
 							'clientTransactionId' =>$reservation_id, 
 							//'response_url' => PJ_URL_LARAVEL.'/confirmacion',
-						'cancellationUrl'=> 'https://iwannatrip.com/confirmacionBeta',
+						'cancellationUrl'=> 'https://tuurl.com/response.php',
 						'responseUrl' => 'https://iwannatrip.com/confirmacionBeta',
 						
 						);
