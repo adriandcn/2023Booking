@@ -350,8 +350,8 @@ if (isset($tpl['status']))
 					<?php endif; ?>
 					<?php if (in_array($tpl['option_arr']['o_bf_notes'], array(2,3))) : ?>
 					<p>
-						<label class="title"><?php __('lblReservationNotes'); ?></label>
-						<textarea name="c_notes" id="c_notes" class="pj-form-field w500 h80"><?php echo stripslashes($tpl['arr']['c_notes']); ?></textarea>
+						<label class="title">Passengers information</label>
+						<textarea placeholder="Please, place all passengers information here... Name LastName Passport/ Name2 LastName2 Passport2/ " name="c_notes" id="c_notes" class="pj-form-field w500 h80"><?php echo stripslashes($tpl['arr']['c_notes']); ?></textarea>
 					</p>
 					<?php endif; ?>
 					<div class="float_left w300">
