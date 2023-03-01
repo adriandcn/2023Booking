@@ -1422,11 +1422,12 @@ class pjFront extends pjAppController
 							//'phoneNumber' => $data['c_phone'],  //Tel�fonos del tarjeta habiente
 							//'email' => $data['c_email'],  //Correo electr�nico del tarjeta habiente
 							'amount' => ($data['amount']*100), //Monto total de la �rden
+							
 							'amountWithoutTax' => ($data['amount']*100), //iMPUESTOS
 							//'amountWithoutTax' =>$data['amount'], //Monto sin impuestos
 							'clientTransactionId' =>$reservation_id, 
 							//'response_url' => PJ_URL_LARAVEL.'/confirmacion',
-						'cancellationUrl'=> 'https://tuurl.com/response.php',
+						'cancellationUrl'=> 'https://iwannatrip.com/confirmacionBeta',
 						'responseUrl' => 'https://iwannatrip.com/confirmacionBeta',
 						
 						);

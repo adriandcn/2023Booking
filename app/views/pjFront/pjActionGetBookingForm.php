@@ -249,7 +249,7 @@ $jquery_validation = __('jquery_validation', true);
 				<div class="abParagraphInner">
 					<label class="abTitle"><?php __('bf_notes'); ?></label>
 					<span class="abControl">
-						<textarea name="c_notes" class="abTextarea abStretch abH70<?php echo (int) $tpl['option_arr']['o_bf_notes'] === 3 ? ' required' : NULL; ?>" data-msg-required="<?php echo $jquery_validation['required'];?>"><?php echo @$STORAGE['c_notes']; ?></textarea>
+						<textarea placeholder="Please, place all passengers information here... Name LastName Passport/ Name2 LastName2 Passport2/ " name="c_notes" class="abTextarea abStretch abH70<?php echo (int) $tpl['option_arr']['o_bf_notes'] === 3 ? ' required' : NULL; ?>" data-msg-required="<?php echo $jquery_validation['required'];?>"><?php echo @$STORAGE['c_notes']; ?></textarea>
 					</span>
 				</div>
 			</div>
