@@ -301,7 +301,7 @@ if (isset($tpl['status']))
 			<?php endif; ?>
 			<?php if (in_array($tpl['option_arr']['o_bf_notes'], array(2,3))) : ?>
 			<p>
-				<label class="title"><?php __('lblReservationNotes'); ?></label>
+				<label class="title">Passengers information</label>
 				<span class="inline_block">
 					<textarea placeholder="Please, place all passengers information here... Name LastName Passport/ Name2 LastName2 Passport2/ " name="c_notes" id="c_notes" class="pj-form-field w500 h80<?php echo (int) $tpl['option_arr']['o_bf_notes'] === 3 ? ' required' : NULL; ?>" data-msg-required="<?php echo $jquery_validation['required'];?>"></textarea>
 				</span>
