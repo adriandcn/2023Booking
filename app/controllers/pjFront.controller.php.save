@@ -467,7 +467,6 @@ class pjFront extends pjAppController
 				$start_dt = $_GET['start_dt'];
 				$end_dt = $_GET['end_dt'];
 
-
 				if ($_GET['start_dt'] > $_GET['end_dt'])
 				{
 					$start_dt = $_GET['end_dt'];
@@ -475,11 +474,6 @@ class pjFront extends pjAppController
 				}
 
 				$_SESSION[$this->defaultCalendar] = array_merge($_SESSION[$this->defaultCalendar], compact('start_dt', 'end_dt'));
-
-
-
-//$GLOBALS['startdate']=$_SESSION[$this->defaultCalendar]['start_dt'];
-//echo($_SESSION["start"]);
 			}
 
 			if (pjObject::getPlugin('pjPrice') !== NULL && $this->option_arr['o_price_plugin'] == 'price')
@@ -1195,8 +1189,7 @@ class pjFront extends pjAppController
 	{
 		$idPosition = "Inicia";
 		//echo '01 Adrian';
-
-
+	
 		//****************************************************************//
 		// ACTUALIZO LA URL EN LA TABLA OPTION E INSERTO EL MD5 EN       //
 		// 			LA TABLA TOKENS 			         //
@@ -1217,20 +1210,10 @@ class pjFront extends pjAppController
 		//if ($this->isXHR())
 		//{
 		$data = array();
-
-
-//$fechaInicio= date("Y-m-d",$_SESSION[$this->defaultCalendar]['start_dt']);
-//$fechaFin=date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt']);
-//echo($_SESSION["start"]);
-//echo( $_GET['start_dt']);
-		if (1 == 1)
+		if (isset($_SESSION[$this->defaultCalendar]) && is_array($_SESSION[$this->defaultCalendar]) && count($_SESSION[$this->defaultCalendar]) > 0)
 		{
-
-//echo('SaveC');
-//echo($GLOBALS['startdate']);
-//echo($GLOBALS['startdate']);
-//exit();
 			$data['ip'] = $_SERVER['REMOTE_ADDR'];
+echo(
 			$data['calendar_id'] = $_GET['cid'];
 			$data['uuid'] = pjUtil::uuid();
 			$data['status'] = ucfirst($this->option_arr['o_status_if_not_paid']);
@@ -1244,7 +1227,7 @@ class pjFront extends pjAppController
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
 			if ($resp['status'] == 'ERR')
 			{
-				pjAppController::jsonResponse($data);
+				pjAppController::jsonResponse($resp);
 			}
 
 			$data = array_merge($_SESSION[$this->defaultCalendar], $data);
@@ -1546,7 +1529,7 @@ class pjFront extends pjAppController
 
 
 		} else {
-			pjAppController::jsonResponse(array('status' => 'ERR', 'code' => 102, 'text' => $_SESSION[$this->defaultCalendar]));
+			pjAppController::jsonResponse(array('status' => 'ERR', 'code' => 102, 'text' => 'Missing or empty params.'));
 		}
 		//}
 		exit;
