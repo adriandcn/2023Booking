@@ -778,18 +778,14 @@ console.log('self form',self);
 
 			var self = this,
 				qs = this.$abWrapper.find("form.abSelectorBookingForm").serialize();
-			
-//console.log('formulario serialized',qs);
-
-//var finicio = '12345';
-//writeCookie('finicio', finicio, 3);
-//console.log('cookie finicio',finicio);
+				console.log('stop1',qs);
 
 			// VERIFICO SI LA RESERVACION ES CON SEGURO O NO
 			checkUpdatePrice = this.$abWrapper.find("#ab_updatePrice_"+self.opts.cid).prop('checked');
 
 			if(cupon === '' || cupon === null || cupon === undefined){
 
+				console.log('stop2',qs);
 				// FLUJO NORMAL DEL BOOKING
 				pjQ.$.post([this.opts.folder, "index.php?controller=pjFront&action=pjActionGetSummaryForm&cid=", this.opts.cid, "&view=", this.opts.view, "&locale=", this.opts.locale, "&index=", this.opts.index, "&session_id=", this.opts.session_id].join(""), qs).done(function (data) {
 					var cadena = data,
@@ -797,7 +793,7 @@ console.log('self form',self);
 					fin    = 2,
 					subCadena = cadena.substring(inicio, fin);
 					var nueva = subCadena.trim();
-
+					console.log('stop3',subCadena);
 					if(nueva == '00'){
 						pjQ.$(form).find(":button, :submit").removeAttr("disabled");
 						self.start_dt = null;
