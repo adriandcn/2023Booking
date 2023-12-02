@@ -162,6 +162,8 @@
 		init: function (opts) {
 			var mid,
 				self = this;
+
+				console.log('Data Stop1: ', opts);
 			this.opts = opts;
 			this.$abWrapper = pjQ.$("#abWrapper_" + this.opts.cid);
 			this.$abCalendar = pjQ.$("#abCalendar_" + this.opts.cid);
