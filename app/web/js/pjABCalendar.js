@@ -219,6 +219,7 @@
 				document.getElementById("precio2").innerHTML = num1;
 				document.getElementById("precio3").innerHTML = num1;
 				document.getElementById("precio4").innerHTML = num1;
+console.log('Precio seguro',num1);
 
 			})
 			.on("click.ab", ".abSelectorConfirm", function () {
@@ -612,7 +613,7 @@
 
 		getBookingForm: function () {
 			var self = this;
-
+console.log('self form',self);
 			pjQ.$.get([this.opts.folder, "index.php?controller=pjFront&action=pjActionGetBookingForm"].join(""), {
 				"cid": self.opts.cid,
 				"view": self.opts.view,
@@ -777,6 +778,12 @@
 
 			var self = this,
 				qs = this.$abWrapper.find("form.abSelectorBookingForm").serialize();
+			
+//console.log('formulario serialized',qs);
+
+//var finicio = '12345';
+//writeCookie('finicio', finicio, 3);
+//console.log('cookie finicio',finicio);
 
 			// VERIFICO SI LA RESERVACION ES CON SEGURO O NO
 			checkUpdatePrice = this.$abWrapper.find("#ab_updatePrice_"+self.opts.cid).prop('checked');
@@ -817,6 +824,7 @@
 
 				// VALIDAR EL CUPON
 				var sendData = 'code='+cupon+'&c_adults='+pasajeros;
+console.log('cupon data',sendData);
 				pjQ.$.post([this.opts.folder, "index.php?controller=pjFront&action=verifyCouponBookingLight"].join(""), sendData).done(function (data) {
 
 					console.log('DATA DE CUPONES:', data);
