@@ -719,9 +719,10 @@ class pjFront extends pjAppController
 
 		//if ($this->isXHR())
 		//{
-			
-			$fechaInicio = date("Y-m-d", $_SESSION[$this->defaultCalendar]['start_dt']);
 			echo 'Stop4:'.$_GET['start_dt'];
+			exit;
+			$fechaInicio = date("Y-m-d", $_SESSION[$this->defaultCalendar]['start_dt']);
+			
 			$conn = new mysqli(PJ_DB_HOST, PJ_DB_USERNAME, PJ_DB_PASS, PJ_DB_NAME);
 			if($conn->connect_errno){
 					echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
