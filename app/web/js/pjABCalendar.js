@@ -238,7 +238,7 @@ console.log('Precio seguro',num1);
 				// console.log('SASDSSADASD: ', cuponID) ;
 			
 				
-				pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid, "&check=", checkUpdatePrice, "&cupon=", valorCupon,"&start_dt=", self.opts.start_dt,"&end_dt=", self.opts.end_dt,"&c_adults=", self.opts.c_adults, "&cupon_id=",cuponID, "&session_id=", self.opts.session_id].join("")).done(function (data) {
+				pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid, "&check=", checkUpdatePrice, "&cupon=", valorCupon, "&cupon_id=",cuponID, "&session_id=", self.opts.session_id].join("")).done(function (data) {
 				//pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid].join("")).done(function (data) {
 					//data.payment_method='creditcard';
 				console.log('Data Adroiam: ', data);
