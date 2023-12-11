@@ -1226,13 +1226,6 @@ class pjFront extends pjAppController
 //$fechaFin=date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt']);
 
 
-
-
-$array = json_decode($_GET['datQ']);
-
-var_dump($array);
-
-exit;
 		if (1 == 1)
 		{
 
@@ -1246,15 +1239,13 @@ exit;
 			$data['status'] = ucfirst($this->option_arr['o_status_if_not_paid']);
 			$data['locale_id'] = $this->pjActionGetLocale();
 
-			$data['date_from'] = date("Y-m-d", $_SESSION[$this->defaultCalendar]['start_dt']);
-			$data['date_to'] = date("Y-m-d", $_SESSION[$this->defaultCalendar]['end_dt']);
+			$data['date_from'] = date("Y-m-d", $_GET['start_dt']);
+			$data['date_to'] = date("Y-m-d", $_GET['end_dt']);
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
 			
-			echo($_SESSION["Adrian"]);
-			echo("stop6:".$_SESSION[$this->defaultCalendar]['start_dt']);
-			exit;
-			echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
+			
+			
 		
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
 			if ($resp['status'] == 'ERR')
@@ -1353,14 +1344,14 @@ exit;
 			// ***********************************************************
 			// ***********************************************************
 
-			/*$_SESSION[$this->defaultCalendar] = NULL;
+			$_SESSION[$this->defaultCalendar] = NULL;
 			unset($_SESSION[$this->defaultCalendar]);
 
 			if (isset($_SESSION[$this->defaultCaptcha]))
 			{
 				$_SESSION[$this->defaultCaptcha] = NULL;
 				unset($_SESSION[$this->defaultCaptcha]);
-			}*/
+			}
 
 			$calendar_arr = pjCalendarModel::factory()->find($_GET['cid'])->getData();
 
