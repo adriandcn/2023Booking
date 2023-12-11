@@ -795,7 +795,7 @@ console.log('self form',self);
 					fin    = 2,
 					subCadena = cadena.substring(inicio, fin);
 					var nueva = subCadena.trim();
-					console.log('stop3',subCadena);
+					console.log('stop3:',subCadena);
 					if(nueva == '00'){
 						pjQ.$(form).find(":button, :submit").removeAttr("disabled");
 						self.start_dt = null;
