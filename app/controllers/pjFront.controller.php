@@ -2100,15 +2100,15 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 	{
 		if ((int) $locale > 0)
 		{
-			//$_SESSION[$this->defaultLocale] = (int) $locale;
+			$_SESSION[$this->defaultLocale] = (int) $locale;
 		}
 		return $this;
 	}
 
 	public function pjActionGetLocale()
 	{
-		//return isset($_SESSION[$this->defaultLocale]) && (int) $_SESSION[$this->defaultLocale] > 0 ? (int) $_SESSION[$this->defaultLocale] : FALSE;
-		return true;
+		return isset($_SESSION[$this->defaultLocale]) && (int) $_SESSION[$this->defaultLocale] > 0 ? (int) $_SESSION[$this->defaultLocale] : FALSE;
+		//return true;
 	}
 
 	public function isXHR()
