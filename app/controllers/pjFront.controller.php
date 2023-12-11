@@ -1197,7 +1197,7 @@ class pjFront extends pjAppController
 
 
 		
-echo($_SESSION["Adrian"]);
+echo(gmdate("Y-m-d", $_POST['start_dt']););
 exit;
 		$idPosition = "Inicia";
 		//echo '01 Adrian';
