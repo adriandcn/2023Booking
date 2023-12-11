@@ -1243,8 +1243,9 @@ class pjFront extends pjAppController
 			$data['sales_origin'] = 'Desktop';
 
 			echo("stop6:");
-			echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
 			exit;
+			echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
+		
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
 			if ($resp['status'] == 'ERR')
 			{
