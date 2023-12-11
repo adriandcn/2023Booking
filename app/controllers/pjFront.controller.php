@@ -721,7 +721,7 @@ class pjFront extends pjAppController
 		//{
 			
 			$fechaInicio = date("Y-m-d", $_SESSION[$this->defaultCalendar]['start_dt']);
-			echo 'Stop4:'.$fechaInicio ;
+			//echo 'Stop4:'.$fechaInicio ;
 			$conn = new mysqli(PJ_DB_HOST, PJ_DB_USERNAME, PJ_DB_PASS, PJ_DB_NAME);
 			if($conn->connect_errno){
 					echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
@@ -1241,8 +1241,9 @@ class pjFront extends pjAppController
 			$data['date_to'] = date("Y-m-d", $_SESSION[$this->defaultCalendar]['end_dt']);
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
-
-			echo("stop6:");
+			
+			echo("stop7:".$_GET['cid']);
+			echo("stop6:".$_SESSION[$this->defaultCalendar]['start_dt']);
 			exit;
 			echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
 		
