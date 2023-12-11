@@ -1227,10 +1227,10 @@ class pjFront extends pjAppController
 
 
 
-$Arr = (object)$_GET['datQ'];
 
+$array = json_decode($_GET['datQ']);
 
-var_dump(json_decode($_GET['datQ']));
+var_dump($array);
 
 exit;
 		if (1 == 1)
