@@ -1242,7 +1242,7 @@ class pjFront extends pjAppController
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
 
-			echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
+			//echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
 			if ($resp['status'] == 'ERR')
 			{
@@ -1340,14 +1340,14 @@ class pjFront extends pjAppController
 			// ***********************************************************
 			// ***********************************************************
 
-			$_SESSION[$this->defaultCalendar] = NULL;
+			/*$_SESSION[$this->defaultCalendar] = NULL;
 			unset($_SESSION[$this->defaultCalendar]);
 
 			if (isset($_SESSION[$this->defaultCaptcha]))
 			{
 				$_SESSION[$this->defaultCaptcha] = NULL;
 				unset($_SESSION[$this->defaultCaptcha]);
-			}
+			}*/
 
 			$calendar_arr = pjCalendarModel::factory()->find($_GET['cid'])->getData();
 
