@@ -1226,7 +1226,7 @@ class pjFront extends pjAppController
 //$fechaFin=date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt']);
 
 
-echo($_GET['datQ']);
+echo($_GET['datQ']['start_dt']);
 exit;
 		if (1 == 1)
 		{
