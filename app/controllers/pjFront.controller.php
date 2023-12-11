@@ -1228,7 +1228,7 @@ class pjFront extends pjAppController
 
 
 $Arr = $_GET['datQ'];
-echo($Arr->start_dt);
+var_dump($Arr);
 exit;
 		if (1 == 1)
 		{
