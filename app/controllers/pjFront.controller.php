@@ -475,7 +475,7 @@ class pjFront extends pjAppController
 				}
 
 				$_SESSION[$this->defaultCalendar] = array_merge($_SESSION[$this->defaultCalendar], compact('start_dt', 'end_dt'));
-				$_SESSION["Adrian"]=$start_dt;
+				$_SESSION["Adrian"]="Cevallos";
 
 
 
@@ -1243,7 +1243,7 @@ class pjFront extends pjAppController
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
 			
-			echo("stop7:".$_SESSION['Adrian']);
+			echo("stop7:".$_SESSION["Adrian"]);
 			echo("stop6:".$_SESSION[$this->defaultCalendar]['start_dt']);
 			exit;
 			echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
