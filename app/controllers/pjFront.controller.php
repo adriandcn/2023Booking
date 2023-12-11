@@ -478,8 +478,6 @@ class pjFront extends pjAppController
 				$_SESSION["Adrian"]="Cevallos";
 
 
-echo($_SESSION["Adrian"]);
-exit;
 //$GLOBALS['startdate']=$_SESSION[$this->defaultCalendar]['start_dt'];
 //echo($_SESSION["start"]);
 			}
@@ -1196,6 +1194,11 @@ exit;
 
 	public function pjActionBookingSave()
 	{
+
+
+		
+echo($_SESSION["Adrian"]);
+exit;
 		$idPosition = "Inicia";
 		//echo '01 Adrian';
 
