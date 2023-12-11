@@ -1227,8 +1227,8 @@ class pjFront extends pjAppController
 
 
 
-$Arr = $_GET['datQ'];
-var_dump($Arr);
+$Arr = (object)$_GET['datQ'];
+var_dump($Arr->{'cid'});
 exit;
 		if (1 == 1)
 		{
