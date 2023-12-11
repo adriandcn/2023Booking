@@ -721,7 +721,7 @@ class pjFront extends pjAppController
 		//{
 			
 			$fechaInicio = date("Y-m-d", $_SESSION[$this->defaultCalendar]['start_dt']);
-			//echo 'Stop4:'.$fechaInicio ;
+			echo 'Stop4:'.$_GET['start_dt'];
 			$conn = new mysqli(PJ_DB_HOST, PJ_DB_USERNAME, PJ_DB_PASS, PJ_DB_NAME);
 			if($conn->connect_errno){
 					echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
@@ -1231,10 +1231,7 @@ exit;
 		if (1 == 1)
 		{
 
-//echo('SaveC');
-//echo($GLOBALS['startdate']);
-//echo($GLOBALS['startdate']);
-//exit();
+
 			$data['ip'] = $_SERVER['REMOTE_ADDR'];
 			$data['calendar_id'] = $_GET['cid'];
 			$data['uuid'] = pjUtil::uuid();
