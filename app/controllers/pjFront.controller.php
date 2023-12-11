@@ -1241,8 +1241,8 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 			$data['status'] = ucfirst($this->option_arr['o_status_if_not_paid']);
 			$data['locale_id'] = $this->pjActionGetLocale();
 
-			$data['date_from'] = date("Y-m-d", $_GET['start_dt']);
-			$data['date_to'] = date("Y-m-d", $_GET['end_dt']);
+			$data['date_from'] = date("Y-m-d",$_SESSION[$this->defaultCalendar]['start_dt'])
+			$data['date_to'] = date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt'])
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
 			
