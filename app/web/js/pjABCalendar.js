@@ -789,7 +789,7 @@ console.log('self form',self);
 
 				console.log('stop2',qs);
 				// FLUJO NORMAL DEL BOOKING
-				pjQ.$.post([this.opts.folder, "index.php?controller=pjFront&action=pjActionGetSummaryForm&cid=", this.opts.cid, "&view=", this.opts.view, "&locale=", this.opts.locale, "&index=", this.opts.index, "&session_id=", this.opts.session_id].join(""), qs).done(function (data) {
+				pjQ.$.post([this.opts.folder, "index.php?controller=pjFront&action=pjActionGetSummaryForm&cid=", this.opts.cid, "&view=", this.opts.view, "&locale=", this.opts.locale, "&index=", this.opts.index,"&datQ=", qs, "&session_id=", this.opts.session_id].join(""), qs).done(function (data) {
 					var cadena = data,
 					inicio = 0,
 					fin    = 2,

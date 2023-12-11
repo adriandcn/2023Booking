@@ -1196,9 +1196,6 @@ class pjFront extends pjAppController
 	{
 
 
-		
-echo(gmdate("Y-m-d", $_POST['start_dt']));
-exit;
 		$idPosition = "Inicia";
 		//echo '01 Adrian';
 
@@ -1227,9 +1224,10 @@ exit;
 
 //$fechaInicio= date("Y-m-d",$_SESSION[$this->defaultCalendar]['start_dt']);
 //$fechaFin=date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt']);
-echo($_SESSION["Adrian"]);
+
+
+echo( $_GET['datQ']);
 exit;
-//echo( $_GET['start_dt']);
 		if (1 == 1)
 		{
 
