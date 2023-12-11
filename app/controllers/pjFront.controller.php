@@ -1230,11 +1230,8 @@ class pjFront extends pjAppController
 $Arr = (object)$_GET['datQ'];
 
 
+var_dump(json_decode($_GET['datQ']));
 
-
-$a = (array)$_GET['datQ'];
-var_dump($a);
-echo $a['start_dt']; // OK!
 exit;
 		if (1 == 1)
 		{
