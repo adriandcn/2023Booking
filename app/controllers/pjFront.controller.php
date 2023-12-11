@@ -719,7 +719,7 @@ class pjFront extends pjAppController
 
 		//if ($this->isXHR())
 		//{
-			echo 'Stop4:'.$_GET['start_dt'];
+			echo 'Stop4:'.$_GET['dataQ'];
 			exit;
 			$fechaInicio = date("Y-m-d", $_SESSION[$this->defaultCalendar]['start_dt']);
 			
