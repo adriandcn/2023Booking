@@ -1242,7 +1242,8 @@ class pjFront extends pjAppController
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
 
-			//echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
+			echo("stop6:");
+			echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
 			if ($resp['status'] == 'ERR')
 			{
