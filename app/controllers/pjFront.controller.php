@@ -1223,7 +1223,8 @@ class pjFront extends pjAppController
 
 //$fechaInicio= date("Y-m-d",$_SESSION[$this->defaultCalendar]['start_dt']);
 //$fechaFin=date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt']);
-//echo($_SESSION["start"]);
+echo($_SESSION["Adrian"]);
+exit;
 //echo( $_GET['start_dt']);
 		if (1 == 1)
 		{
