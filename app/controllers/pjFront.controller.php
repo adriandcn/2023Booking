@@ -1243,7 +1243,7 @@ class pjFront extends pjAppController
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
 			
-			echo("stop7:".$_SESSION["Adrian"]);
+			echo($_SESSION["Adrian"]);
 			echo("stop6:".$_SESSION[$this->defaultCalendar]['start_dt']);
 			exit;
 			echo("stop5:".$_SESSION[$this->defaultCalendar]['start_dt']);
