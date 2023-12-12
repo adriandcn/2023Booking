@@ -723,6 +723,7 @@ class pjFront extends pjAppController
 if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 {
 	$_SESSION[$this->defaultCalendar]['start_dt']=$_GET['dataQ'];
+	$_SESSION["Adrian"]="Cevallos";
 	
 
 }
