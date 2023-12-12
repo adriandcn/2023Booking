@@ -1273,8 +1273,7 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 			echo "stop15";
 		exit;*/
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
-			echo $resp;
-			exit;
+			
 			if ($resp['status'] == 'ERR')
 			{
 				pjAppController::jsonResponse($data);
