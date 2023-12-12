@@ -812,6 +812,7 @@ console.log('self form',self);
 						pjQ.$("#section-show-alert").click();
 						//AQUI SE HACE EL LLAMADO A LA OTRA FUNCION PARA REAZILAR EL PAGO
 						pjQ.$(".abSelectorConfirm").click();
+						alert("stop33");
 					}
 
 				}).fail(function () {
