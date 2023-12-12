@@ -839,6 +839,7 @@ console.log('cupon data',sendData);
 							cuponID = data.id;
 
 							pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionGetSummaryForm&cid=", self.opts.cid, "&view=", self.opts.view, "&locale=", self.opts.locale, "&index=", self.opts.index, "&session_id=", self.opts.session_id].join(""), qs).done(function (data) {
+								console.log(data);
 								var cadena = data,
 								inicio = 0,
 								fin    = 2,
