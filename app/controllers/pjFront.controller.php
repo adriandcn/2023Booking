@@ -529,8 +529,8 @@ class pjFront extends pjAppController
 
 	public function pjActionGetCalendar()
 	{
-		echo"stop 31";
-		exit;
+		//echo"stop 31";
+		//exit;
 		$this->setAjax(true);
 
 		if ($this->isXHR())
