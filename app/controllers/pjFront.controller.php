@@ -725,6 +725,8 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 	$_SESSION[$this->defaultCalendar]['start_dt']=$_GET['dataQ'];
 	$_SESSION["Adrian"]="Cevallos";
 	
+	echo $_SESSION["Adrian"];
+	echo "stop20";
 
 }
 
