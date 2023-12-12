@@ -553,8 +553,8 @@ class pjAppController extends pjController
 	protected function pjActionCheckDt($date_from, $date_to, $calendar_id=NULL, $id=NULL, $backend=false)
 	{
 		$calendar_id = !empty($calendar_id) ? (int) $calendar_id : $this->getForeignId();
-		//echo "stop13";
-		//echo $date_from;
+		echo "stop13";
+		echo $date_from;
 
 		if ($backend && $calendar_id != $this->getForeignId())
 		{
