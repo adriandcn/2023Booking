@@ -725,7 +725,7 @@ class pjFront extends pjAppController
 if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 {
 	$_SESSION[$this->defaultCalendar]['start_dt']=$_GET['dataQ'];
-	$_SESSION["Adrian"]="Cevallos";
+	//$_SESSION["Adrian"]="Cevallos";
 	
 	//echo $_SESSION["Adrian"];
 	//echo "stop20";
@@ -1244,8 +1244,15 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 
 		if (1 == 1)
 		{
-echo($_GET['dataQ']);
-exit;
+
+
+
+if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
+{
+	$_SESSION[$this->defaultCalendar]['start_dt']=$_GET['dataQ'];
+	
+
+}
 
 			$data['ip'] = $_SERVER['REMOTE_ADDR'];
 			$data['calendar_id'] = $_GET['cid'];
