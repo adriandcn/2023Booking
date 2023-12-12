@@ -812,9 +812,9 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
             }
 		//}
 
-		echo $_SESSION["Adrian"];
-	echo "stop202";
-	exit;
+	//	echo $_SESSION["Adrian"];
+	//echo "stop202";
+	//exit;
 	}
 
 	public function pjActionImage(){
