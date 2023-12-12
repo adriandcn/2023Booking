@@ -811,6 +811,10 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
                 echo '00 '. $_POST['c_adults'] .' '.  $_POST['c_children'];
             }
 		//}
+
+		echo $_SESSION["Adrian"];
+	echo "stop202";
+	exit;
 	}
 
 	public function pjActionImage(){
@@ -1253,11 +1257,11 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
 			
-			echo "stop 14";
+			/*echo "stop 14";
 			echo $_SESSION[$this->defaultCalendar]["start_dt"];
 			echo $_SESSION["Adrian"];
 			echo "stop15";
-		exit;
+		exit;*/
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
 			if ($resp['status'] == 'ERR')
 			{
