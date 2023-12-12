@@ -1244,7 +1244,8 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 
 		if (1 == 1)
 		{
-
+echo($_GET['dataQ']);
+exit;
 
 			$data['ip'] = $_SERVER['REMOTE_ADDR'];
 			$data['calendar_id'] = $_GET['cid'];

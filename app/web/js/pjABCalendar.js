@@ -236,14 +236,14 @@ console.log('Precio seguro',num1);
 
 				// console.log('SASDSSADASD: ', valorCupon) ;
 				// console.log('SASDSSADASD: ', cuponID) ;
-				console.log('Data Stop19: ', opts);
-				
-				pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid, "&check=", checkUpdatePrice, "&cupon=", valorCupon, "&cupon_id=",cuponID, "&session_id=", self.opts.session_id].join("")).done(function (data) {
+				//console.log('Data Stop19: ', opts);
+				var dataQ=sessionStorage.getItem('dataQ');
+				pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid, "&check=", checkUpdatePrice, "&cupon=", valorCupon, "&dataQ=", dataQ, "&cupon_id=",cuponID, "&session_id=", self.opts.session_id].join("")).done(function (data) {
 				//pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid].join("")).done(function (data) {
 					//data.payment_method='creditcard';
 				console.log('Data Adroiam: ', data);
 				console.log('self Adroiam: ', self);
-				console.log(sessionStorage.getItem('dataQ'));
+				//console.log(sessionStorage.getItem('dataQ'));
 				
 				if (data.code === undefined) {
 						return;
@@ -789,11 +789,11 @@ console.log('self form',self);
 
 			if(cupon === '' || cupon === null || cupon === undefined){
 
-				console.log('stop2',qs);
+				//console.log('stop2',qs);
 				// FLUJO NORMAL DEL BOOKING
 				pjQ.$.post([this.opts.folder, "index.php?controller=pjFront&action=pjActionGetSummaryForm&cid=", this.opts.cid, "&view=", this.opts.view, "&locale=", this.opts.locale, "&index=", this.opts.index,"&dataQ=", qs, "&session_id=", this.opts.session_id].join(""), qs).done(function (data) {
 			    
-					console.log(data);
+					//console.log(data);
 					var cadena = data,
 					inicio = 0,
 					fin    = 2,
