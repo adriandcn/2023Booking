@@ -243,6 +243,8 @@ console.log('Precio seguro',num1);
 					//data.payment_method='creditcard';
 				console.log('Data Adroiam: ', data);
 				console.log('self Adroiam: ', self);
+				console.log(sessionStorage.getItem('dataQ'));
+				
 				if (data.code === undefined) {
 						return;
 					}
@@ -810,6 +812,7 @@ console.log('self form',self);
 					}else{
 						self.$abCalendar.html(data);
 						pjQ.$("#section-show-alert").click();
+						sessionStorage.setItem('dataQ', qs);
 						//AQUI SE HACE EL LLAMADO A LA OTRA FUNCION PARA REAZILAR EL PAGO
 						pjQ.$(".abSelectorConfirm").click();
 						
