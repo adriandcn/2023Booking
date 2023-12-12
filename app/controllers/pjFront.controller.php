@@ -723,9 +723,10 @@ class pjFront extends pjAppController
 if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 {
 	$_SESSION[$this->defaultCalendar]['start_dt']=$_GET['dataQ'];
+	echo "Stop 10";
 
 }
-
+echo "Stop 11";
 			$fechaInicio = date("Y-m-d", $_SESSION[$this->defaultCalendar]['start_dt']);
 			
 			$conn = new mysqli(PJ_DB_HOST, PJ_DB_USERNAME, PJ_DB_PASS, PJ_DB_NAME);
