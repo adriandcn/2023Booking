@@ -529,6 +529,8 @@ class pjFront extends pjAppController
 
 	public function pjActionGetCalendar()
 	{
+		echo"stop 31";
+		exit;
 		$this->setAjax(true);
 
 		if ($this->isXHR())
@@ -725,9 +727,9 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 	$_SESSION[$this->defaultCalendar]['start_dt']=$_GET['dataQ'];
 	$_SESSION["Adrian"]="Cevallos";
 	
-	echo $_SESSION["Adrian"];
-	echo "stop20";
-	exit;
+	//echo $_SESSION["Adrian"];
+	//echo "stop20";
+	//exit;
 
 }
 
