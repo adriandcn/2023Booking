@@ -1249,10 +1249,10 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 
 if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 {
-	echo "stop9983";
+	
 	$_SESSION[$this->defaultCalendar]['start_dt']=$_GET['dataQ'];
 	echo $_SESSION[$this->defaultCalendar]['start_dt'];
-	exit;
+	
 
 }
 
@@ -1273,6 +1273,8 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 			echo "stop15";
 		exit;*/
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
+			echo $resp;
+			exit;
 			if ($resp['status'] == 'ERR')
 			{
 				pjAppController::jsonResponse($data);
