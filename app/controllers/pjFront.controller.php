@@ -807,14 +807,14 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 						->where('t1.status', 'T')
 						->find($_SESSION[$this->defaultCalendar]['c_country'])->getData());
 				}
+				echo "stop10101";
             }else{
+				echo "stop999";
                 echo '00 '. $_POST['c_adults'] .' '.  $_POST['c_children'];
             }
 		//}
 
-		echo $_SESSION["Adrian"];
-	echo "stop202";
-	exit;
+	
 	}
 
 	public function pjActionImage(){
