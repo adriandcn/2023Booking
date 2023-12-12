@@ -727,6 +727,7 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 	
 	echo $_SESSION["Adrian"];
 	echo "stop20";
+	exit;
 
 }
 
