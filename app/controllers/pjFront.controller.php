@@ -1247,9 +1247,9 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 			$data['price_based_on'] = $this->option_arr['o_price_based_on'];
 			$data['sales_origin'] = 'Desktop';
 			
-			
-			
-		
+			echo "stop 14";
+			echo $_SESSION[$this->defaultCalendar]['start_dt'];
+		exit;
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
 			if ($resp['status'] == 'ERR')
 			{
