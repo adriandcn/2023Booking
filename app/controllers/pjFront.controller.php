@@ -1251,6 +1251,7 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 			echo "stop 14";
 			echo $_SESSION[$this->defaultCalendar]["start_dt"];
 			echo $_SESSION["Adrian"];
+			echo "stop15";
 		exit;
 			$resp = $this->pjActionCheckDt($data['date_from'], $data['date_to'], $data['calendar_id'], NULL, TRUE);
 			if ($resp['status'] == 'ERR')
