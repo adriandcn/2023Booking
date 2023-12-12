@@ -1249,8 +1249,10 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 
 if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 {
+	echo "stop9983";
 	$_SESSION[$this->defaultCalendar]['start_dt']=$_GET['dataQ'];
-	
+	echo $_SESSION[$this->defaultCalendar]['start_dt'];
+	exit;
 
 }
 
