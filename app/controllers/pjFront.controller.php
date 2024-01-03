@@ -1250,7 +1250,7 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 {
 	echo $_GET['dataQ'];
-	exit:
+	exit;
 	$rest = substr($_GET['dataQ'], 9,20);
 	$_SESSION[$this->defaultCalendar]['start_dt']=$rest;
 	//echo $_SESSION[$this->defaultCalendar]['start_dt'];
