@@ -1241,7 +1241,8 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 
 //$fechaInicio= date("Y-m-d",$_SESSION[$this->defaultCalendar]['start_dt']);
 //$fechaFin=date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt']);
-
+echo $_GET['dataQ'];
+	exit;
 		if (1 == 1)
 		{
 
@@ -1249,8 +1250,7 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 
 if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 {
-	echo $_GET['dataQ'];
-	exit;
+	
 	$rest = substr($_GET['dataQ'], 9,20);
 	$_SESSION[$this->defaultCalendar]['start_dt']=$rest;
 	//echo $_SESSION[$this->defaultCalendar]['start_dt'];
