@@ -1241,7 +1241,7 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 
 //$fechaInicio= date("Y-m-d",$_SESSION[$this->defaultCalendar]['start_dt']);
 //$fechaFin=date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt']);
-echo $_GET['dataQ'];
+echo '01 Adrian';
 	exit;
 		if (1 == 1)
 		{
