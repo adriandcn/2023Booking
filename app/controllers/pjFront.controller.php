@@ -1242,9 +1242,7 @@ if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 //$fechaInicio= date("Y-m-d",$_SESSION[$this->defaultCalendar]['start_dt']);
 //$fechaFin=date("Y-m-d",$_SESSION[$this->defaultCalendar]['end_dt']);
 $atributes= explode("amps", $_GET['dataQ']);
-echo $atributes[0]; 
-echo $atributes[1]; 
-	exit;
+
 		if (1 == 1)
 		{
 
@@ -1253,10 +1251,10 @@ echo $atributes[1];
 if( $_SESSION[$this->defaultCalendar]['start_dt']=="")
 {
 	
-	$rest = substr($_GET['dataQ'], 9,20);
+	$rest = substr( $atributes[0], 9,20);
 	$_SESSION[$this->defaultCalendar]['start_dt']=$rest;
 	//echo $_SESSION[$this->defaultCalendar]['start_dt'];
-	
+	$data['c_adults']=substr( $atributes[2], 9,20);
 
 }
 
