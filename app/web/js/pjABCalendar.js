@@ -239,7 +239,7 @@ console.log('Precio seguro',num1);
 				//console.log('Data Stop19: ', opts);
 				var dataQ=sessionStorage.getItem('dataQ');
 
- dataQ = dataQ.replaceAll("&", "amps");	
+ 				dataQ = dataQ.replaceAll("&", "amps");	
 			//	console.log("DataQ: ", dataQ);
 				pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid, "&check=", checkUpdatePrice, "&cupon=", valorCupon, "&dataQ=", dataQ, "&cupon_id=",cuponID, "&session_id=", self.opts.session_id].join("")).done(function (data) {
 				//pjQ.$.post([self.opts.folder, "index.php?controller=pjFront&action=pjActionBookingSave&cid=", self.opts.cid].join("")).done(function (data) {
